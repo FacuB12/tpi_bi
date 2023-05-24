@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{83AB98C3-3ACB-4B42-8C56-8B87C55C1183}">
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{F899487B-ACB4-4255-BEC4-D5AEAA1D036D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5630,14 +5630,13 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="carga_dim_tiempo"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="dim_time_v2.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="-- Declare and set variables for loop&#xA;Declare&#xA;@StartDate date,&#xA;@EndDate date,&#xA;@Date date&#xA;Set @StartDate = '2018-01-01'&#xA;Set @EndDate = '2024-01-01'&#xA;Set @Date = @StartDate&#xA;-- Loop through dates&#xA;WHILE @Date &lt;= @EndDate&#xA;BEGIN&#xA;    -- Check for leap year&#xA;    DECLARE @IsLeapYear BIT&#xA;    IF ((Year(@Date) % 4 = 0) AND (Year(@Date) % 100 != 0 OR Year(@Date) % 400 = 0))&#xA;    BEGIN&#xA;        SELECT @IsLeapYear = 1&#xA;    END&#xA;    ELSE&#xA;    BEGIN&#xA;        SELECT @IsLeapYear = 0&#xA;    END&#xA;    -- Check for weekend&#xA;    DECLARE @IsWeekend BIT&#xA;    IF (DATEPART(dw, @Date) = 1 OR DATEPART(dw, @Date) = 7)&#xA;    BEGIN&#xA;        SELECT @IsWeekend = 1&#xA;    END&#xA;    ELSE&#xA;    BEGIN&#xA;        SELECT @IsWeekend = 0&#xA;    END&#xA;    -- Insert record in dimension table if date does not exist&#xA;    IF NOT EXISTS ( SELECT 'X' from dbo.Tiempo (NOLOCK) where Date = @Date )&#xA;    BEGIN&#xA;   &#xA;   -- Insert record in dimension table&#xA;    INSERT Into Tiempo&#xA;    (&#xA;    [Date],&#xA;    [DateString],&#xA;    [Day],&#xA;    [DayofYear],&#xA;    [DayofWeek],&#xA;    [Dayofweekname],&#xA;    [Week],&#xA;    [Month],&#xA;    [MonthName],&#xA;    [Quarter],&#xA;    [Year],&#xA;    [IsWeekend],&#xA;    [IsLeapYear]&#xA;    )&#xA;    Values&#xA;    (&#xA;    @Date,&#xA;    CONVERT(varchar(10), @Date, 105), -- See links for 105 explanation&#xA;    Day(@Date),&#xA;    DATEPART(dy, @Date),&#xA;    DATEPART(dw, @Date),&#xA;    DATENAME(dw, @Date),&#xA;    DATEPART(wk, @Date),&#xA;    DATEPART(mm, @Date),&#xA;    DATENAME(mm, @Date),&#xA;    DATENAME(qq, @Date),&#xA;    Year(@Date),&#xA;    @IsWeekend,&#xA;    @IsLeapYear&#xA;    )&#xA;    END&#xA;    -- Goto next day&#xA;    Set @Date = dateadd(day,1,@Date )&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -6275,82 +6274,6 @@
                       refId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\carga_tabla_hechos_transacciones\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input].Columns[Cod_Respuesta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Cod_Respuesta"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]}) ? "S/D" : #{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(Cod_Respuesta) ? "S/D" : Cod_Respuesta</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -9518,7 +9441,7 @@ where [refTable].[id_Cliente] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the cache type of the lookup table."
                   name="CacheType"
-                  typeConverter="CacheType">2</property>
+                  typeConverter="CacheType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -9676,7 +9599,7 @@ where [refTable].[id_terminal] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the cache type of the lookup table."
                   name="CacheType"
-                  typeConverter="CacheType">2</property>
+                  typeConverter="CacheType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -9834,7 +9757,7 @@ where [refTable].[id_Operatoria] = ? and [refTable].[id_Operacion] = ?</property
                   dataType="System.Int32"
                   description="Specifies the cache type of the lookup table."
                   name="CacheType"
-                  typeConverter="CacheType">2</property>
+                  typeConverter="CacheType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -10010,7 +9933,7 @@ where [refTable].[id_Operatoria] = ? and [refTable].[id_Respuesta] = ?</property
                   dataType="System.Int32"
                   description="Specifies the cache type of the lookup table."
                   name="CacheType"
-                  typeConverter="CacheType">2</property>
+                  typeConverter="CacheType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -10060,23 +9983,6 @@ where [refTable].[id_Operatoria] = ? and [refTable].[id_Respuesta] = ?</property
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Inputs[Lookup Input].Columns[Copy of Cod_Respuesta]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Cod_Respuesta"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cod_Respuesta]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">id_Respuesta</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Inputs[Lookup Input].Columns[Copy of ID_Operatoria]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -10087,6 +9993,23 @@ where [refTable].[id_Operatoria] = ? and [refTable].[id_Respuesta] = ?</property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">id_Operatoria</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Inputs[Lookup Input].Columns[Copy of Cod_Respuesta]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Cod_Respuesta"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cod_Respuesta]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id_Respuesta</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -10186,7 +10109,7 @@ where [refTable].[Date] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the cache type of the lookup table."
                   name="CacheType"
-                  typeConverter="CacheType">2</property>
+                  typeConverter="CacheType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -10306,6 +10229,158 @@ where [refTable].[Date] = ?</property>
                       refId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="REPLACE_0to00"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Inputs[Derived Column Input].Columns[Cod_Respuesta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cod_Respuesta"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]} == "0") ? (DT_WSTR,2)"00" : (DT_WSTR,2)#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(Cod_Respuesta == "0") ? (DT_WSTR,2)"00" : (DT_WSTR,2)Cod_Respuesta</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\carga_tabla_hechos_transacciones\replace_null"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="replace_null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\carga_tabla_hechos_transacciones\replace_null.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\replace_null.Inputs[Derived Column Input].Columns[Cod_Respuesta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cod_Respuesta"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]}) ? "S/D" : #{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Cod_Respuesta) ? "S/D" : Cod_Respuesta</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\replace_null.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\replace_null.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -11273,74 +11348,79 @@ where [refTable].[Date] = ?</property>
               startId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+              endId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
               endId="Package\carga_tabla_hechos_transacciones\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
-              startId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
-              endId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\carga_tabla_hechos_transacciones\replace_null.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Error Output]" />
-            <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Clientes.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
               endId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input]"
               name="Lookup Error Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Outputs[Lookup Error Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
               endId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input]"
               name="Lookup Error Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
-              endId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output]" />
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Clientes.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
               endId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
               endId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
               endId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
               endId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
               endId="Package\carga_tabla_hechos_transacciones\Aggregate.Inputs[Aggregate Input 1]"
               name="Lookup Match Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
+              endId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -11354,7 +11434,7 @@ where [refTable].[Date] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="limpio_tablas"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -11372,7 +11452,7 @@ where [refTable].[Date] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="limpio_tabla_hechos_transacciones"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -11478,7 +11558,7 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="252,42"
           Id="Package\carga_tabla_hechos_transacciones"
-          TopLeft="838.5,371.5" />
+          TopLeft="869.5,368.5" />
         <NodeLayout
           Size="253,42"
           Id="Package\limpio_tabla_hechos_transacciones"
@@ -11599,18 +11679,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="777.5,394">
+          TopLeft="777.5,392.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61,0"
+              EndConnector="92,0"
               Start="0,0"
-              End="53.5,0">
+              End="84.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="53.5,0" />
+                    End="84.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12240,196 +12320,76 @@ where [refTable].[Date] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="204,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
-          TopLeft="520,213" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\carga_tabla_hechos_transacciones\Derived Column"
-          TopLeft="21.9191919191919,122.020202020202" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\carga_tabla_hechos_transacciones\Data Conversion"
-          TopLeft="18,218" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion"
-          TopLeft="858,213" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\carga_tabla_hechos_transacciones\Transacciones"
-          TopLeft="28.0555555555556,42.0252525252525" />
-        <NodeLayout
-          Size="224,42"
-          Id="Package\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
-          TopLeft="1440.5,96.0631578947368" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Operaciones"
-          TopLeft="581,431" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Tiempo"
-          TopLeft="885,96" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Operaciones"
-          TopLeft="574,333" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Canales"
-          TopLeft="298.5,331.5" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Clientes"
-          TopLeft="25,324" />
-        <NodeLayout
           Size="171,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Respuesta"
-          TopLeft="877.5,333.5" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Tiempo"
-          TopLeft="572,91" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Canales"
-          TopLeft="306,433" />
+          TopLeft="878.5,393.5" />
         <NodeLayout
           Size="149,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Clientes"
-          TopLeft="29,427" />
+          TopLeft="30,487" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Tiempo"
+          TopLeft="560,111" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Canales"
+          TopLeft="307,493" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Clientes"
+          TopLeft="26,384" />
         <NodeLayout
           Size="162,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Respuesta"
-          TopLeft="876,426" />
+          TopLeft="877,486" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
+          TopLeft="562,233" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\carga_tabla_hechos_transacciones\Transacciones"
+          TopLeft="36.0555555555556,62.0252525252525" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
+          TopLeft="1443.5,116.063157894737" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion"
+          TopLeft="861,233" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\carga_tabla_hechos_transacciones\Data Conversion"
+          TopLeft="23.1111111111111,307" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Canales"
+          TopLeft="299.5,391.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\carga_tabla_hechos_transacciones\replace_null"
+          TopLeft="35.010101010101,136.121212121213" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Operaciones"
+          TopLeft="575,393" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Operaciones"
+          TopLeft="582,491" />
         <NodeLayout
           Size="130,42"
           Id="Package\carga_tabla_hechos_transacciones\Aggregate"
-          TopLeft="1195.71428571429,99.5714285714286" />
+          TopLeft="1198.71428571429,119.571428571429" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Tiempo"
+          TopLeft="888,116" />
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
-          TopLeft="1040,118.785714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="155.71428571429,0"
-              Start="0,0"
-              End="148.21428571429,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="148.21428571429,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.915756138395,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
-          TopLeft="962.5,213">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-75"
-              Start="0,0"
-              End="0,-67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-39.5546875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
-          TopLeft="962.75,333.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-78.5"
-              Start="0,0"
-              End="0,-71">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-71" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-41.3046875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
-          TopLeft="754,354.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.5,0"
-              Start="0,0"
-              End="116,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="116,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="9.80861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
-          TopLeft="456.5,353.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="117.5,0"
-              Start="0,0"
-              End="110,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="110,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="6.80861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
-          TopLeft="183,348.75">
+          TopLeft="184,408.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12452,104 +12412,128 @@ where [refTable].[Date] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
+          TopLeft="1043,138.785714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.71428571429,0"
+              Start="0,0"
+              End="148.21428571429,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="148.21428571429,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.915756138395,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
+          TopLeft="965.5,233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-75"
+              Start="0,0"
+              End="0,-67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-39.5546875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
+          TopLeft="964.75,393.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-118.5"
+              Start="0,0"
+              End="0,-111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-61.3046875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
+          TopLeft="755,414.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.5,0"
+              Start="0,0"
+              End="116,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.80861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
+          TopLeft="457.5,413.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.5,0"
+              Start="0,0"
+              End="110,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="110,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.80861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
-          TopLeft="858,234">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-134,0"
-              Start="0,0"
-              End="-126.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-126.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-109.11638671875,5,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
-          TopLeft="885,114.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-167,0"
-              Start="0,0"
-              End="-159.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-159.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-125.61638671875,5,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
-          TopLeft="960,375.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.5"
-              Start="0,0"
-              End="0,43">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,15.6953125,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
-          TopLeft="665.5,375">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,18.4453125,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
-          TopLeft="103.75,366">
+          TopLeft="104.75,426">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12572,8 +12556,8 @@ where [refTable].[Date] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
-          TopLeft="379.25,373.5">
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
+          TopLeft="380.25,433.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12596,41 +12580,115 @@ where [refTable].[Date] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
-          TopLeft="102.237373737374,84.0252525252525">
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
+          TopLeft="888,134.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.9949494949495"
+              EndConnector="-182,0"
               Start="0,0"
-              End="0,30.4949494949495">
+              End="-174.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.4949494949495" />
+                    End="-174.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-133.11638671875,5,91.7327734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
-          TopLeft="99.709595959596,164.020202020202">
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
+          TopLeft="861,254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.979797979798"
+              EndConnector="-95,0"
               Start="0,0"
-              End="0,46.479797979798">
+              End="-87.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.479797979798" />
+                    End="-87.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.61638671875,5,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
+          TopLeft="961,435.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5"
+              Start="0,0"
+              End="0,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,15.6953125,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
+          TopLeft="666.5,435">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,18.4453125,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
+          TopLeft="107.782828282828,104.025252525252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0959595959605"
+              Start="0,0"
+              End="0,24.5959595959605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5959595959605" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12641,18 +12699,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Data Conversion Output]"
-          TopLeft="101.25,260">
+          TopLeft="104.305555555556,349">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,56.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12663,7 +12721,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Aggregate Output 1]"
-          TopLeft="1325.71428571429,118.817293233083">
+          TopLeft="1328.71428571429,138.817293233083">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12683,21 +12741,92 @@ where [refTable].[Date] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\carga_tabla_hechos_transacciones\REPLACE_0to00"
+          TopLeft="24,224" />
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+          TopLeft="105.005050505051,178.121212121213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.878787878787"
+              Start="0,0"
+              End="0,38.378787878787">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.378787878787" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
+          TopLeft="104.805555555556,266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion">
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Respuesta">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Lugares_Transaccion]</Value>
+          type="q3:string">[dbo].[Respuestas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Clientes">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Clientes]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12723,40 +12852,17 @@ where [refTable].[Date] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Tiempo">
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Tiempo]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Operaciones">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Operaciones]</Value>
+          type="q3:string">[dbo].[Lugares_Transaccion]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12774,7 +12880,7 @@ where [refTable].[Date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -12792,17 +12898,17 @@ where [refTable].[Date] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Clientes">
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Operaciones">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Clientes]</Value>
+          type="q3:string">[dbo].[Operaciones]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12815,17 +12921,17 @@ where [refTable].[Date] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Respuesta">
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Tiempo">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Respuestas]</Value>
+          type="q3:string">[dbo].[Tiempo]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
