@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{CB47E79E-E461-4ABC-9471-2B0FC3F9E4CC}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{83AB98C3-3ACB-4B42-8C56-8B87C55C1183}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1004,7 +1004,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Z:\Sources\2023\respuestas_v4.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Z:\Sources\2023\respuestas_v4.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -2734,7 +2734,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID_Operatoria"
-              DTS:DTSID="{0E27EA42-B3B5-4E29-B143-172EB0EDF4C0}"
+              DTS:DTSID="{4FBB9A04-D427-49D2-939B-4453EF4A9553}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2743,7 +2743,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID_Canal"
-              DTS:DTSID="{AE9656A9-DCC1-4766-80E6-5D2917DE4EFE}"
+              DTS:DTSID="{DA9C238C-01F9-4D6A-846A-9F5A622AD9DA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2752,7 +2752,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID_Operacion"
-              DTS:DTSID="{A483F7A1-5D35-4B5D-AE59-24B0A80E2996}"
+              DTS:DTSID="{E53F9913-6A8D-4E0C-AB76-113F43C49B0D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2761,7 +2761,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Fecha_operacion"
-              DTS:DTSID="{935E3D10-9FD8-4CF5-8A0D-D9308D9D595F}"
+              DTS:DTSID="{6DE999BD-94B5-4FCC-8649-FD22B8500557}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2770,7 +2770,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Tipo_Cuenta"
-              DTS:DTSID="{46C75F1C-4DB1-4771-BBCE-D520CC641305}"
+              DTS:DTSID="{2D06C6D8-460A-4F20-811F-E44550416689}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2779,7 +2779,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Cuenta"
-              DTS:DTSID="{4614333F-462D-4B55-8F1A-24F9BD157372}"
+              DTS:DTSID="{3CC0A8F6-119A-4CED-91CC-08AE671981D6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2788,7 +2788,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Id_Cliente"
-              DTS:DTSID="{5DD3466F-E25F-48E7-8ADD-1E30A201BE62}"
+              DTS:DTSID="{200CEBB9-AD9B-42C5-8E1F-F122513D53B1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2797,7 +2797,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Tipo_Cuenta"
-              DTS:DTSID="{9412B84E-626F-4C01-AE99-63388314C350}"
+              DTS:DTSID="{BE2EB5B9-4E42-43D6-AD0B-C191F86B0C2E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2806,7 +2806,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Cuenta"
-              DTS:DTSID="{999ABC0C-B215-41E7-AE51-9DC5CBEE7AB5}"
+              DTS:DTSID="{99B9943D-8CDF-4D9C-B4FB-7A99C96EBADC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2815,7 +2815,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Id_Cliente"
-              DTS:DTSID="{1E57381D-9C70-4795-8A7B-987BBB66A526}"
+              DTS:DTSID="{F3E0F542-D1A9-4CC1-833B-CDDA5F3DEFD0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2824,7 +2824,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Comercio"
-              DTS:DTSID="{4D1D0ABB-3C19-4F99-B8C2-F090B901C0D1}"
+              DTS:DTSID="{2C5E1AD9-9EEE-4446-937D-2DBAE905BD1E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2833,7 +2833,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Servicio"
-              DTS:DTSID="{87692F73-D188-4D89-896F-CEE28919C9A5}"
+              DTS:DTSID="{4EC61362-FEEC-4748-B615-FD3EA1BF0809}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2842,7 +2842,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Concepto"
-              DTS:DTSID="{7CAA3C66-1EA3-45F2-BAE0-B5995CB47329}"
+              DTS:DTSID="{7A4AC4FC-F9DB-46F7-9D07-8D9C1A6CAC54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2851,7 +2851,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Tipo_tarjeta"
-              DTS:DTSID="{AB9D356C-2513-475C-93F6-1D2A6AF76470}"
+              DTS:DTSID="{A9604459-9373-4230-9D63-B09C44E103B9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2860,7 +2860,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Marca_Tarjeta"
-              DTS:DTSID="{906F66B8-93BA-426E-966A-7730D517DAB9}"
+              DTS:DTSID="{5B899926-AAC9-4AEB-B479-4EEC68303A72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2869,7 +2869,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Nro_Tarjeta"
-              DTS:DTSID="{4AC4FA11-D75D-40FA-8415-9F803889060D}"
+              DTS:DTSID="{EBB44DE4-B71D-4A94-A1F9-1D46B115AD66}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2878,7 +2878,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="terminal"
-              DTS:DTSID="{0BA367D9-608D-4966-B7BD-707C98F40257}"
+              DTS:DTSID="{B999F770-BEBD-4BD6-9B97-716F4AAA5234}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2887,7 +2887,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Comprobante"
-              DTS:DTSID="{FB742D03-041E-4663-8E02-59CD3A820E3A}"
+              DTS:DTSID="{8D575692-17D8-406B-AB8B-99078856AF95}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2896,7 +2896,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Pais"
-              DTS:DTSID="{2E759C0B-ABD3-448B-A486-9642CD9EAE80}"
+              DTS:DTSID="{40A604CD-DA9B-4863-9E68-9DDEE08FD91F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2905,7 +2905,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Moneda"
-              DTS:DTSID="{6676C052-8414-49D6-AFE5-91C03EA2D075}"
+              DTS:DTSID="{1353CC54-1C6D-4BC1-9396-0CCD1668492B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2914,7 +2914,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Monto"
-              DTS:DTSID="{5409E243-304F-46A8-AA88-F84877C1ACF0}"
+              DTS:DTSID="{C4179011-21B9-4AD5-879B-B4F4F54FA82F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2923,7 +2923,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Moneda"
-              DTS:DTSID="{381F3626-2CF2-4BED-B1D5-8FF80CD2F240}"
+              DTS:DTSID="{5B4310CE-E67C-4B23-A0F2-3B80C4F03735}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2932,7 +2932,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Monto"
-              DTS:DTSID="{8FCD4EC6-6FBE-4BEA-A2CB-6183153BD08E}"
+              DTS:DTSID="{634ACFA5-F1AE-4689-97AC-3817C87D805E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2941,7 +2941,243 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cod_Respuesta"
-              DTS:DTSID="{FD00E608-8E56-4595-9418-AD1543A22730}"
+              DTS:DTSID="{A4D82815-2816-4119-9658-C4116C86D0A9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[transacciones_prueba]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B62946BD-39D6-4C87-814D-56832C799D97}"
+      DTS:ObjectName="transacciones_prueba">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="Z:\Sources\2023\transacciones - copia.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Operatoria"
+              DTS:DTSID="{61D12874-556C-464C-9A5B-8DC1BF7085D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Canal"
+              DTS:DTSID="{F62BD4BD-C707-49F5-BC4E-DC7F9D867B27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Operacion"
+              DTS:DTSID="{7869B885-ED5D-4353-8362-D7A45654BB6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fecha_operacion"
+              DTS:DTSID="{59F3CE6E-0D03-4572-86EC-6A0A8566EDEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Tipo_Cuenta"
+              DTS:DTSID="{773E398B-6EC8-4F83-BD75-D2CE49A1B0E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Cuenta"
+              DTS:DTSID="{5EC82ACD-47D9-46D2-838A-55B8EADADCEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Id_Cliente"
+              DTS:DTSID="{592608F8-AEE4-4491-9923-B60790076FC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Tipo_Cuenta"
+              DTS:DTSID="{D092EA41-3798-41F1-90F2-7C61F2202FC1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Cuenta"
+              DTS:DTSID="{8F4593DD-E3A7-46D5-B8D1-514C71D7B31F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Id_Cliente"
+              DTS:DTSID="{2227B4AE-112B-4CBB-97CA-885A21EE0BF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Comercio"
+              DTS:DTSID="{9847C887-B078-4A32-8DD4-90300ADE8FD9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Servicio"
+              DTS:DTSID="{7B92D12E-30E5-4D5B-8021-F6CCB84B73DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Concepto"
+              DTS:DTSID="{57825005-7033-4ABF-9D46-FDCBDECC538A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo_tarjeta"
+              DTS:DTSID="{CD62DF23-2964-4208-AE88-B596FBA53E5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Marca_Tarjeta"
+              DTS:DTSID="{A02B33EF-2591-4A77-A9DD-134BB5665351}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nro_Tarjeta"
+              DTS:DTSID="{5F4F641E-84DB-4323-A2C0-5509DA817B02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="terminal"
+              DTS:DTSID="{F9098E0A-64CD-46FE-935F-4EEC0B15B382}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Comprobante"
+              DTS:DTSID="{97E17AF3-8C56-4E3E-BA57-491EC3280DDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Pais"
+              DTS:DTSID="{3D97F68B-3328-4D2A-B8A2-F0DF7676858E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Moneda"
+              DTS:DTSID="{07A1E735-B26D-47FC-BC4E-E1436B7DD32C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Monto"
+              DTS:DTSID="{8137803E-914F-40EC-90D6-FE9ECAA8DBEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Moneda"
+              DTS:DTSID="{4186AEDC-4597-4107-9AF9-CBAF73F4C60C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Monto"
+              DTS:DTSID="{356DF816-8F1F-436C-A26E-BB95A3EF3C7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cod_Respuesta"
+              DTS:DTSID="{81B1934F-8EA1-4C6B-B7F4-877450ACA616}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -6039,6 +6275,82 @@
                       refId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\carga_tabla_hechos_transacciones\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input].Columns[Cod_Respuesta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cod_Respuesta"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]}) ? "S/D" : #{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Cod_Respuesta) ? "S/D" : Cod_Respuesta</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -10232,8 +10544,8 @@ where [refTable].[Date] = ?</property>
               <connections>
                 <connection
                   refId="Package\carga_tabla_hechos_transacciones\Transacciones.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[transacciones]"
-                  connectionManagerRefId="Package.ConnectionManagers[transacciones]"
+                  connectionManagerID="Package.ConnectionManagers[transacciones_prueba]"
+                  connectionManagerRefId="Package.ConnectionManagers[transacciones_prueba]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -10960,8 +11272,13 @@ where [refTable].[Date] = ?</property>
               name="Data Conversion Output"
               startId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
               endId="Package\carga_tabla_hechos_transacciones\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
+              endId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output]" />
             <path
@@ -11032,7 +11349,6 @@ where [refTable].[Date] = ?</property>
       DTS:refId="Package\limpio_tablas"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{6E013236-FC33-4966-9BC4-633632B1727F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -11043,7 +11359,7 @@ where [refTable].[Date] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}"
-          SQLTask:SqlStatementSource="-- Deshabilitar restricciones de clave externa&#xA;&#xA;ALTER TABLE [dbo].[Transacciones] &#xA;NOCHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Transacciones] &#xA;DISABLE TRIGGER ALL;&#xA;&#xA;&#xA;ALTER TABLE [dbo].[Transacciones] &#xA;SET IDENTITY_INSERT [dbo].[Transacciones] ON;&#xA;DELETE FROM [dbo].[Transacciones];&#xA;&#xA;ALTER TABLE [dbo].[Transacciones] &#xA;SET IDENTITY_INSERT [dbo].[Transacciones] OFF;&#xA;&#xA;&#xA;&#xA;-- Deshabilitar restricciones de clave externa en las dimensiones&#xA;&#xA;ALTER TABLE [dbo].[Tiempo] &#xA;NOCHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Clientes] &#xA;NOCHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Respuesta] &#xA;NOCHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Canales] &#xA;NOCHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Operaciones] &#xA;NOCHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Lugares_transaccion] &#xA;NOCHECK CONSTRAINT ALL;&#xA;&#xA;&#xA;-- Truncar las dimensiones&#xA;&#xA;TRUNCATE TABLE [dbo].[Tiempo];&#xA;&#xA;TRUNCATE TABLE [dbo].[Clientes];&#xA;&#xA;TRUNCATE TABLE [dbo].[Respuesta];&#xA;&#xA;TRUNCATE TABLE [dbo].[Canales];&#xA;&#xA;TRUNCATE TABLE [dbo].[Operaciones];&#xA;&#xA;TRUNCATE TABLE [dbo].[Lugares_transaccion];&#xA;&#xA;&#xA;&#xA;-- Habilitar restricciones de clave externa en las dimensiones&#xA;&#xA;ALTER TABLE [dbo].[Tiempo] &#xA;CHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Clientes] &#xA;CHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Respuesta] &#xA;CHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Canales] &#xA;CHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Operaciones] &#xA;CHECK CONSTRAINT ALL;&#xA;&#xA;ALTER TABLE [dbo].[Lugares_transaccion] &#xA;CHECK CONSTRAINT ALL;&#xA;&#xA;&#xA;&#xA;-- Habilitar restricciones de clave externa en la tabla de hechos&#xA;&#xA;ALTER TABLE [dbo].[Transacciones] &#xA;ENABLE TRIGGER ALL;&#xA;&#xA;ALTER TABLE [dbo].[Transacciones] &#xA;CHECK CONSTRAINT ALL;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table [dbo].[Transacciones];&#xA;delete from Tiempo;&#xA;delete from Clientes;&#xA;delete from Respuestas;&#xA;DBCC CHECKIDENT ('[Respuestas]', RESEED, 0);&#xA;delete from Canales;&#xA;delete from Operaciones;&#xA;DBCC CHECKIDENT ('[Operaciones]', RESEED, 0);&#xA;delete from Lugares_Transaccion" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -11164,13 +11480,13 @@ where [refTable].[Date] = ?</property>
           Id="Package\carga_tabla_hechos_transacciones"
           TopLeft="838.5,371.5" />
         <NodeLayout
-          Size="143,42"
-          Id="Package\limpio_tablas"
-          TopLeft="84.5,63.5" />
-        <NodeLayout
           Size="253,42"
           Id="Package\limpio_tabla_hechos_transacciones"
           TopLeft="645.5,165.957013574661" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\limpio_tablas"
+          TopLeft="84.5,63.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="163.25,183.5">
@@ -11282,28 +11598,6 @@ where [refTable].[Date] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="158.75,105.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="777.5,394">
           <EdgeLayout.Curve>
@@ -11317,6 +11611,28 @@ where [refTable].[Date] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="53.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="158.75,105.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11804,7 +12120,7 @@ where [refTable].[Date] = ?</property>
     design-time-name="Package\carga_dim_respuestas">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\carga_dim_respuestas\DimRespuestas"
@@ -11848,7 +12164,9 @@ where [refTable].[Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11882,7 +12200,9 @@ where [refTable].[Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11918,39 +12238,19 @@ where [refTable].[Date] = ?</property>
     design-time-name="Package\carga_tabla_hechos_transacciones">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="204,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
           TopLeft="520,213" />
         <NodeLayout
-          Size="149,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Clientes"
-          TopLeft="29,427" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Canales"
-          TopLeft="306,433" />
+          Size="158,42"
+          Id="Package\carga_tabla_hechos_transacciones\Derived Column"
+          TopLeft="21.9191919191919,122.020202020202" />
         <NodeLayout
           Size="161,42"
           Id="Package\carga_tabla_hechos_transacciones\Data Conversion"
           TopLeft="18,218" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Tiempo"
-          TopLeft="572,91" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Clientes"
-          TopLeft="25,324" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\carga_tabla_hechos_transacciones\Error_Respuesta"
-          TopLeft="876,426" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Respuesta"
-          TopLeft="877.5,333.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion"
@@ -11958,7 +12258,7 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="151,42"
           Id="Package\carga_tabla_hechos_transacciones\Transacciones"
-          TopLeft="22.5,119.5" />
+          TopLeft="28.0555555555556,42.0252525252525" />
         <NodeLayout
           Size="224,42"
           Id="Package\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
@@ -11968,6 +12268,10 @@ where [refTable].[Date] = ?</property>
           Id="Package\carga_tabla_hechos_transacciones\Error_Operaciones"
           TopLeft="581,431" />
         <NodeLayout
+          Size="155,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Tiempo"
+          TopLeft="885,96" />
+        <NodeLayout
           Size="180,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Operaciones"
           TopLeft="574,333" />
@@ -11976,13 +12280,33 @@ where [refTable].[Date] = ?</property>
           Id="Package\carga_tabla_hechos_transacciones\Lookup Canales"
           TopLeft="298.5,331.5" />
         <NodeLayout
+          Size="158,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Clientes"
+          TopLeft="25,324" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup Respuesta"
+          TopLeft="877.5,333.5" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Tiempo"
+          TopLeft="572,91" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Canales"
+          TopLeft="306,433" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Clientes"
+          TopLeft="29,427" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Respuesta"
+          TopLeft="876,426" />
+        <NodeLayout
           Size="130,42"
           Id="Package\carga_tabla_hechos_transacciones\Aggregate"
           TopLeft="1195.71428571429,99.5714285714286" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\carga_tabla_hechos_transacciones\Lookup Tiempo"
-          TopLeft="885,96" />
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
           TopLeft="1040,118.785714285714">
@@ -12273,18 +12597,40 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
-          TopLeft="98.25,161.5">
+          TopLeft="102.237373737374,84.0252525252525">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.5"
+              EndConnector="0,37.9949494949495"
               Start="0,0"
-              End="0,49">
+              End="0,30.4949494949495">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49" />
+                    End="0,30.4949494949495" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+          TopLeft="99.709595959596,164.020202020202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.979797979798"
+              Start="0,0"
+              End="0,46.479797979798">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.479797979798" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12341,52 +12687,6 @@ where [refTable].[Date] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Clientes">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Clientes]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Respuesta">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Respuestas]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion">
     <Properties>
       <Property>
@@ -12419,6 +12719,29 @@ where [refTable].[Date] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Tiempo">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Tiempo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -12469,7 +12792,7 @@ where [refTable].[Date] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Tiempo">
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Clientes">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12479,7 +12802,30 @@ where [refTable].[Date] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Tiempo]</Value>
+          type="q3:string">[dbo].[Clientes]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup Respuesta">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Respuestas]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
