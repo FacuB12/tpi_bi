@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{1A659F98-0584-4CD7-A7A0-A91016AB39DF}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{CB47E79E-E461-4ABC-9471-2B0FC3F9E4CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6987,6 +6987,517 @@
               </inputs>
             </component>
             <component
+              refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Error_Lugar_Transaccion"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lugar_transacciones]"
+                  connectionManagerRefId="Package.ConnectionManagers[lugar_transacciones]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[ID_Operatoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_Operatoria"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ID_Operatoria]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operatoria]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[ID_Operacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_Operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ID_Operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operacion]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Fecha_operacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fecha_operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Fecha_operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Fecha_operacion]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Origen_Tipo_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Tipo_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Tipo_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Tipo_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Origen_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Origen_Id_Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Id_Cliente"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Id_Cliente]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Id_Cliente]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Destino_Tipo_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Tipo_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Tipo_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Tipo_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Destino_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Destino_Id_Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Id_Cliente"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Id_Cliente]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Id_Cliente]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Comercio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Comercio"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Comercio]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Comercio]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Servicio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Servicio"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Servicio]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Servicio]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Concepto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Concepto"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Concepto]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Concepto]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Tipo_tarjeta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Tipo_tarjeta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Tipo_tarjeta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Tipo_tarjeta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Marca_Tarjeta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Marca_Tarjeta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Marca_Tarjeta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Marca_Tarjeta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Nro_Tarjeta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nro_Tarjeta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Nro_Tarjeta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Nro_Tarjeta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[terminal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="terminal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[terminal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[terminal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Comprobante]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Comprobante"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Comprobante]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Comprobante]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Origen_Pais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Pais"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Pais]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Pais]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Origen_Moneda]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Moneda"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Moneda]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Moneda]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Origen_Monto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Monto"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Monto]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Monto]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Destino_Moneda]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Moneda"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Moneda]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Moneda]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Destino_Monto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Monto"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Monto]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Monto]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Cod_Respuesta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cod_Respuesta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Cod_Respuesta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Copy of Origen_Id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Origen_Id_Cliente"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of Origen_Id_Cliente]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Origen_Id_Cliente]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Copy of ID_Canal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of ID_Canal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Canal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Canal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Copy of ID_Operatoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of ID_Operatoria"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operatoria]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Operatoria]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Copy of ID_Operacion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of ID_Operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Operacion]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Copy of Cod_Respuesta]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Cod_Respuesta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of Cod_Respuesta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cod_Respuesta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Copy of terminal]"
+                      cachedDataType="i4"
+                      cachedName="Copy of terminal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of terminal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of terminal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[Copy of Fecha_operacion]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of Fecha_operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="id_Cliente"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[id_Canal]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_Canal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ID_Canal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Match Output].Columns[id_Canal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[id_Op_Op]"
+                      cachedDataType="i4"
+                      cachedName="id_Op_Op"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Op_Op]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Match Output].Columns[id_Op_Op]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[id_Res_Op]"
+                      cachedDataType="i4"
+                      cachedName="id_Res_Op"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Res_Op]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Outputs[Lookup Match Output].Columns[id_Res_Op]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ID_Operatoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_Operatoria" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ID_Canal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_Canal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ID_Operacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_Operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Fecha_operacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fecha_operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Tipo_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Tipo_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Id_Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Tipo_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Tipo_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Id_Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Comercio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Comercio" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Servicio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Servicio" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Concepto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Concepto" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Tipo_tarjeta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tipo_tarjeta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Marca_Tarjeta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Marca_Tarjeta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Nro_Tarjeta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nro_Tarjeta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[terminal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="terminal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Comprobante]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Comprobante" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Pais" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Moneda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Moneda" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Origen_Monto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Monto" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Moneda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Moneda" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Destino_Monto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Monto" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Cod_Respuesta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cod_Respuesta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of Origen_Id_Cliente]"
+                      dataType="i4"
+                      name="Copy of Origen_Id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Canal]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of ID_Canal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operatoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of ID_Operatoria" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operacion]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of ID_Operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of Cod_Respuesta]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of Cod_Respuesta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of terminal]"
+                      dataType="i4"
+                      name="Copy of terminal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
+                      dataType="dbDate"
+                      name="Copy of Fecha_operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
+                      dataType="i4"
+                      name="id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Canal]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_Canal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Op_Op]"
+                      dataType="i4"
+                      name="id_Op_Op" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Res_Op]"
+                      dataType="i4"
+                      name="id_Res_Op" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
               refId="Package\carga_tabla_hechos_transacciones\Error_Operaciones"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -8481,517 +8992,6 @@
                       name="ErrorCode" />
                     <externalMetadataColumn
                       refId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\carga_tabla_hechos_transacciones\Flat File Destination"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="1033"
-              name="Flat File Destination"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[lugar_transacciones]"
-                  connectionManagerRefId="Package.ConnectionManagers[lugar_transacciones]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID_Operatoria]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ID_Operatoria"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_Operatoria]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operatoria]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID_Operacion]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ID_Operacion"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_Operacion]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operacion]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Fecha_operacion]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Fecha_operacion"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Fecha_operacion]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Fecha_operacion]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Origen_Tipo_Cuenta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Origen_Tipo_Cuenta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Tipo_Cuenta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Tipo_Cuenta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Origen_Cuenta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Origen_Cuenta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Cuenta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Cuenta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Origen_Id_Cliente]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Origen_Id_Cliente"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Id_Cliente]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Destino_Tipo_Cuenta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Destino_Tipo_Cuenta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Tipo_Cuenta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Tipo_Cuenta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Destino_Cuenta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Destino_Cuenta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Cuenta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Cuenta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Destino_Id_Cliente]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Destino_Id_Cliente"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Id_Cliente]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Comercio]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Comercio"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Comercio]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Comercio]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Servicio]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Servicio"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Servicio]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Servicio]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Concepto]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Concepto"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Concepto]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Concepto]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Tipo_tarjeta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Tipo_tarjeta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Tipo_tarjeta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Tipo_tarjeta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Marca_Tarjeta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Marca_Tarjeta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Marca_Tarjeta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Marca_Tarjeta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Nro_Tarjeta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Nro_Tarjeta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nro_Tarjeta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Nro_Tarjeta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[terminal]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="terminal"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[terminal]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[terminal]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Comprobante]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Comprobante"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Comprobante]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Comprobante]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Origen_Pais]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Origen_Pais"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Pais]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Pais]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Origen_Moneda]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Origen_Moneda"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Moneda]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Moneda]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Origen_Monto]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Origen_Monto"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Monto]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Monto]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Destino_Moneda]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Destino_Moneda"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Moneda]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Moneda]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Destino_Monto]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Destino_Monto"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Monto]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Monto]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Cod_Respuesta]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Cod_Respuesta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Cod_Respuesta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of Origen_Id_Cliente]"
-                      cachedDataType="i4"
-                      cachedName="Copy of Origen_Id_Cliente"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of Origen_Id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Origen_Id_Cliente]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of ID_Canal]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of ID_Canal"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Canal]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Canal]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of ID_Operatoria]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of ID_Operatoria"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operatoria]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Operatoria]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of ID_Operacion]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of ID_Operacion"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operacion]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Operacion]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of Cod_Respuesta]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Cod_Respuesta"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of Cod_Respuesta]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cod_Respuesta]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of terminal]"
-                      cachedDataType="i4"
-                      cachedName="Copy of terminal"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of terminal]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of terminal]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[Copy of Fecha_operacion]"
-                      cachedDataType="dbDate"
-                      cachedName="Copy of Fecha_operacion"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[id_Cliente]"
-                      cachedDataType="i4"
-                      cachedName="id_Cliente"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[id_Canal]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="id_Canal"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_Canal]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Match Output].Columns[id_Canal]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[id_Op_Op]"
-                      cachedDataType="i4"
-                      cachedName="id_Op_Op"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_Op_Op]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Match Output].Columns[id_Op_Op]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[id_Res_Op]"
-                      cachedDataType="i4"
-                      cachedName="id_Res_Op"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_Res_Op]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Outputs[Lookup Match Output].Columns[id_Res_Op]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_Operatoria]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ID_Operatoria" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_Canal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ID_Canal" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_Operacion]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ID_Operacion" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Fecha_operacion]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Fecha_operacion" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Tipo_Cuenta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Origen_Tipo_Cuenta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Cuenta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Origen_Cuenta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Id_Cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Origen_Id_Cliente" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Tipo_Cuenta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Destino_Tipo_Cuenta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Cuenta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Destino_Cuenta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Id_Cliente]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Destino_Id_Cliente" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Comercio]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Comercio" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Servicio]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Servicio" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Concepto]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Concepto" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Tipo_tarjeta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Tipo_tarjeta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Marca_Tarjeta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Marca_Tarjeta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nro_Tarjeta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Nro_Tarjeta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[terminal]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="terminal" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Comprobante]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Comprobante" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Pais]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Origen_Pais" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Moneda]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Origen_Moneda" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Origen_Monto]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Origen_Monto" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Moneda]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Destino_Moneda" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Destino_Monto]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Destino_Monto" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Cod_Respuesta]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Cod_Respuesta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of Origen_Id_Cliente]"
-                      dataType="i4"
-                      name="Copy of Origen_Id_Cliente" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Canal]"
-                      dataType="wstr"
-                      length="50"
-                      name="Copy of ID_Canal" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operatoria]"
-                      dataType="wstr"
-                      length="50"
-                      name="Copy of ID_Operatoria" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operacion]"
-                      dataType="wstr"
-                      length="50"
-                      name="Copy of ID_Operacion" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of Cod_Respuesta]"
-                      dataType="wstr"
-                      length="50"
-                      name="Copy of Cod_Respuesta" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of terminal]"
-                      dataType="i4"
-                      name="Copy of terminal" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
-                      dataType="dbDate"
-                      name="Copy of Fecha_operacion" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
-                      dataType="i4"
-                      name="id_Cliente" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_Canal]"
-                      dataType="wstr"
-                      length="255"
-                      name="id_Canal" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_Op_Op]"
-                      dataType="i4"
-                      name="id_Op_Op" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_Res_Op]"
-                      dataType="i4"
-                      name="id_Res_Op" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                       dataType="i4"
                       name="ErrorColumn" />
                   </externalMetadataColumns>
@@ -10991,7 +10991,7 @@ where [refTable].[Date] = ?</property>
               startId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
-              endId="Package\carga_tabla_hechos_transacciones\Flat File Destination.Inputs[Flat File Destination Input]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input]"
               name="Lookup Error Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output]" />
             <path
@@ -11920,9 +11920,9 @@ where [refTable].[Date] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,42"
-          Id="Package\carga_tabla_hechos_transacciones\Flat File Destination"
-          TopLeft="570,211" />
+          Size="204,42"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
+          TopLeft="520,213" />
         <NodeLayout
           Size="149,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Clientes"
@@ -11938,7 +11938,7 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="146,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Tiempo"
-          TopLeft="610,93" />
+          TopLeft="572,91" />
         <NodeLayout
           Size="158,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Clientes"
@@ -11962,7 +11962,7 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="224,42"
           Id="Package\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
-          TopLeft="1332.5,93.0631578947368" />
+          TopLeft="1440.5,96.0631578947368" />
         <NodeLayout
           Size="172,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Operaciones"
@@ -11978,56 +11978,56 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="130,42"
           Id="Package\carga_tabla_hechos_transacciones\Aggregate"
-          TopLeft="1155.71428571429,98.5714285714286" />
+          TopLeft="1195.71428571429,99.5714285714286" />
         <NodeLayout
           Size="155,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Tiempo"
-          TopLeft="884,97" />
+          TopLeft="885,96" />
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
-          TopLeft="1039,118.785714285714">
+          TopLeft="1040,118.785714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="116.714285714286,0"
+              EndConnector="155.71428571429,0"
               Start="0,0"
-              End="109.214285714286,0">
+              End="148.21428571429,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="109.214285714286,0" />
+                    End="148.21428571429,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.415756138393,5,96.3827734375,11.609375"
+              BoundingBox="25.915756138395,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
-          TopLeft="962,213">
+          TopLeft="962.5,213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-74"
+              EndConnector="0,-75"
               Start="0,0"
-              End="0,-66.5">
+              End="0,-67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-66.5" />
+                    End="0,-67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-39.0546875,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,-39.5546875,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12129,49 +12129,49 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
-          TopLeft="858,233">
+          TopLeft="858,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-112,0"
+              EndConnector="-134,0"
               Start="0,0"
-              End="-104.5,0">
+              End="-126.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-104.5,0" />
+                    End="-126.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-98.11638671875,5,91.7327734375,11.609375"
+              BoundingBox="-109.11638671875,5,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
-          TopLeft="884,116">
+          TopLeft="885,114.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-128,0"
+              EndConnector="-167,0"
               Start="0,0"
-              End="-120.5,0">
+              End="-159.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-120.5,0" />
+                    End="-159.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-106.11638671875,5,91.7327734375,11.609375"
+              BoundingBox="-125.61638671875,5,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12317,18 +12317,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Aggregate Output 1]"
-          TopLeft="1285.71428571429,116.817293233083">
+          TopLeft="1325.71428571429,118.817293233083">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="46.7857142857099,0"
+              EndConnector="114.78571428571,0"
               Start="0,0"
-              End="39.2857142857099,0">
+              End="107.28571428571,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="39.2857142857099,0" />
+                    End="107.28571428571,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
