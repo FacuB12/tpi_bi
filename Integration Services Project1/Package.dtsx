@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{83AB98C3-3ACB-4B42-8C56-8B87C55C1183}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{51258960-AA72-41FF-A705-6CF869A86FB4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5636,14 +5636,14 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="dim_time_v2.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="-- Declare and set variables for loop&#xA;Declare&#xA;@StartDate date,&#xA;@EndDate date,&#xA;@Date date&#xA;Set @StartDate = '2018-01-01'&#xA;Set @EndDate = '2024-01-01'&#xA;Set @Date = @StartDate&#xA;-- Loop through dates&#xA;WHILE @Date &lt;= @EndDate&#xA;BEGIN&#xA;    -- Check for leap year&#xA;    DECLARE @IsLeapYear BIT&#xA;    IF ((Year(@Date) % 4 = 0) AND (Year(@Date) % 100 != 0 OR Year(@Date) % 400 = 0))&#xA;    BEGIN&#xA;        SELECT @IsLeapYear = 1&#xA;    END&#xA;    ELSE&#xA;    BEGIN&#xA;        SELECT @IsLeapYear = 0&#xA;    END&#xA;    -- Check for weekend&#xA;    DECLARE @IsWeekend BIT&#xA;    IF (DATEPART(dw, @Date) = 1 OR DATEPART(dw, @Date) = 7)&#xA;    BEGIN&#xA;        SELECT @IsWeekend = 1&#xA;    END&#xA;    ELSE&#xA;    BEGIN&#xA;        SELECT @IsWeekend = 0&#xA;    END&#xA;    -- Insert record in dimension table if date does not exist&#xA;    IF NOT EXISTS ( SELECT 'X' from dbo.Tiempo (NOLOCK) where Date = @Date )&#xA;    BEGIN&#xA;   &#xA;   -- Insert record in dimension table&#xA;    INSERT Into Tiempo&#xA;    (&#xA;    [Date],&#xA;    [DateString],&#xA;    [Day],&#xA;    [DayofYear],&#xA;    [DayofWeek],&#xA;    [Dayofweekname],&#xA;    [Week],&#xA;    [Month],&#xA;    [MonthName],&#xA;    [Quarter],&#xA;    [Year],&#xA;    [IsWeekend],&#xA;    [IsLeapYear]&#xA;    )&#xA;    Values&#xA;    (&#xA;    @Date,&#xA;    CONVERT(varchar(10), @Date, 105), -- See links for 105 explanation&#xA;    Day(@Date),&#xA;    DATEPART(dy, @Date),&#xA;    DATEPART(dw, @Date),&#xA;    DATENAME(dw, @Date),&#xA;    DATEPART(wk, @Date),&#xA;    DATEPART(mm, @Date),&#xA;    DATENAME(mm, @Date),&#xA;    DATENAME(qq, @Date),&#xA;    Year(@Date),&#xA;    @IsWeekend,&#xA;    @IsLeapYear&#xA;    )&#xA;    END&#xA;    -- Goto next day&#xA;    Set @Date = dateadd(day,1,@Date )&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\carga_tabla_hechos_transacciones"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{26CAF564-91D9-492F-8B28-F2D33B770C14}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -11884,7 +11884,7 @@ where [refTable].[Date] = ?</property>
     design-time-name="Package\carga_dim_lugar_transaccion">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="179,42"
           Id="Package\carga_dim_lugar_transaccion\LugarTransacciones"
@@ -11928,9 +11928,7 @@ where [refTable].[Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11964,9 +11962,7 @@ where [refTable].[Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12242,74 +12238,74 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="204,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
-          TopLeft="520,213" />
+          TopLeft="523,213" />
         <NodeLayout
           Size="158,42"
           Id="Package\carga_tabla_hechos_transacciones\Derived Column"
-          TopLeft="21.9191919191919,122.020202020202" />
+          TopLeft="26.010101010101,121.565656565657" />
         <NodeLayout
           Size="161,42"
           Id="Package\carga_tabla_hechos_transacciones\Data Conversion"
-          TopLeft="18,218" />
+          TopLeft="24,251" />
         <NodeLayout
           Size="209,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion"
-          TopLeft="858,213" />
+          TopLeft="861,213" />
         <NodeLayout
           Size="151,42"
           Id="Package\carga_tabla_hechos_transacciones\Transacciones"
-          TopLeft="28.0555555555556,42.0252525252525" />
+          TopLeft="31.0555555555556,20.0252525252525" />
         <NodeLayout
           Size="224,42"
           Id="Package\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
-          TopLeft="1440.5,96.0631578947368" />
+          TopLeft="1443.5,96.0631578947368" />
         <NodeLayout
           Size="172,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Operaciones"
-          TopLeft="581,431" />
+          TopLeft="584,431" />
         <NodeLayout
           Size="155,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Tiempo"
-          TopLeft="885,96" />
+          TopLeft="888,96" />
         <NodeLayout
           Size="180,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Operaciones"
-          TopLeft="574,333" />
+          TopLeft="577,333" />
         <NodeLayout
           Size="158,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Canales"
-          TopLeft="298.5,331.5" />
+          TopLeft="301.5,331.5" />
         <NodeLayout
           Size="158,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Clientes"
-          TopLeft="25,324" />
+          TopLeft="28,324" />
         <NodeLayout
           Size="171,42"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Respuesta"
-          TopLeft="877.5,333.5" />
+          TopLeft="880.5,333.5" />
         <NodeLayout
           Size="146,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Tiempo"
-          TopLeft="572,91" />
+          TopLeft="575,91" />
         <NodeLayout
           Size="150,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Canales"
-          TopLeft="306,433" />
+          TopLeft="309,433" />
         <NodeLayout
           Size="149,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Clientes"
-          TopLeft="29,427" />
+          TopLeft="32,427" />
         <NodeLayout
           Size="162,42"
           Id="Package\carga_tabla_hechos_transacciones\Error_Respuesta"
-          TopLeft="876,426" />
+          TopLeft="879,426" />
         <NodeLayout
           Size="130,42"
           Id="Package\carga_tabla_hechos_transacciones\Aggregate"
-          TopLeft="1195.71428571429,99.5714285714286" />
+          TopLeft="1198.71428571429,99.5714285714286" />
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
-          TopLeft="1040,118.785714285714">
+          TopLeft="1043,118.785714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12333,7 +12329,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
-          TopLeft="962.5,213">
+          TopLeft="965.5,213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12357,7 +12353,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
-          TopLeft="962.75,333.5">
+          TopLeft="965.75,333.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12381,7 +12377,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
-          TopLeft="754,354.25">
+          TopLeft="757,354.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12405,7 +12401,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
-          TopLeft="456.5,353.25">
+          TopLeft="459.5,353.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12429,7 +12425,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
-          TopLeft="183,348.75">
+          TopLeft="186,348.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12453,7 +12449,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
-          TopLeft="858,234">
+          TopLeft="861,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12477,7 +12473,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
-          TopLeft="885,114.5">
+          TopLeft="888,114.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12501,7 +12497,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
-          TopLeft="960,375.5">
+          TopLeft="963,375.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12525,7 +12521,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
-          TopLeft="665.5,375">
+          TopLeft="668.5,375">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12549,7 +12545,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
-          TopLeft="103.75,366">
+          TopLeft="106.75,366">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12573,7 +12569,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
-          TopLeft="379.25,373.5">
+          TopLeft="382.25,373.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12597,40 +12593,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
-          TopLeft="102.237373737374,84.0252525252525">
+          TopLeft="105.782828282828,62.0252525252525">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.9949494949495"
+              EndConnector="0,59.5404040404041"
               Start="0,0"
-              End="0,30.4949494949495">
+              End="0,52.0404040404041">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.4949494949495" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
-          TopLeft="99.709595959596,164.020202020202">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.979797979798"
-              Start="0,0"
-              End="0,46.479797979798">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.479797979798" />
+                    End="0,52.0404040404041" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12641,18 +12615,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Data Conversion Output]"
-          TopLeft="101.25,260">
+          TopLeft="105.75,293">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,31"
               Start="0,0"
-              End="0,56.5">
+              End="0,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12663,7 +12637,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Aggregate Output 1]"
-          TopLeft="1325.71428571429,118.817293233083">
+          TopLeft="1328.71428571429,118.817293233083">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12675,6 +12649,28 @@ where [refTable].[Date] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="107.28571428571,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+          TopLeft="104.75505050505,163.565656565657">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87.4343434343434"
+              Start="0,0"
+              End="0,79.9343434343434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.9343434343434" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
