@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="97"
-  DTS:VersionGUID="{108032B7-A29D-4FFF-A12F-A7730ABC501E}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{28A87AED-5F7E-447A-8BAD-89E62554217A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,6 +26,30 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\canales_v2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[clientes-matching-quality]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2D420D74-4933-4FDD-B8B7-FAC9FD4BF5FA}"
+      DTS:ObjectName="clientes-matching-quality">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\clientes\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[clientes_matching-v1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{04262785-DC24-48CD-A6CD-0066BCC12BDD}"
+      DTS:ObjectName="clientes_matching-v1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\Clientes-Matching-v1.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -673,6 +697,145 @@
               DTS:TextQualified="True"
               DTS:ObjectName="id_Cliente"
               DTS:DTSID="{80151448-5C23-477B-8B52-BA08934DE0B2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Errores_DIMClientes]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{25F3FF25-BDAC-47E4-B35F-79AE426DFBEC}"
+      DTS:ObjectName="Errores_DIMClientes">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Errores\errores_DIMcliente.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{F0C92A74-0BE5-4D8A-93F5-584B27A0A893}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nombre"
+              DTS:DTSID="{AEDE0E46-DCF2-45CE-BEC2-3324200A60CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Apellido"
+              DTS:DTSID="{B8CD1536-9EBE-4DD2-B5FE-C7E297C1A06C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_sucursal"
+              DTS:DTSID="{89DA67B8-8574-463A-99CE-7FD952DB065E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Direccion"
+              DTS:DTSID="{086792F6-E14C-4B88-97A3-F0FDB2FB6704}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ciudad"
+              DTS:DTSID="{220E331A-236A-4DE1-9DCC-2515F10C931D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pais"
+              DTS:DTSID="{600A6D9E-D583-46B4-A2AA-276ABD302BA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{D9885884-E573-41CE-90BE-0FEF657622FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fechanac"
+              DTS:DTSID="{348E81F2-AA06-4869-A8B9-30A77479680D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="genero"
+              DTS:DTSID="{D26A1159-E80D-4C60-96E2-A99166CE42C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ingresos"
+              DTS:DTSID="{FF5B1C9F-976C-4B63-BDD1-B9DF349D6EF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="moneda"
+              DTS:DTSID="{0C87AD2D-A2C5-49A7-A134-81A384AA26AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{97D8F55C-B9BF-435C-A4EC-E748B7AFF3FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{B6E888A6-6069-4533-B7CD-4DF70D63B868}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1964,6 +2127,341 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[error_clientes_unificado]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{271E3FB9-F915-4234-9B06-CE917A6F445F}"
+      DTS:ObjectName="error_clientes_unificado">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Errores\errores_cliente_unif.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Operatoria"
+              DTS:DTSID="{9316BB2F-F3AF-43D4-B78F-DF6762E00D16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Canal"
+              DTS:DTSID="{9B5536A1-9AA1-4908-B7E9-3E21200E58A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Operacion"
+              DTS:DTSID="{3C220D6E-0472-46DA-AA51-C2B5D4BF373D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fecha_operacion"
+              DTS:DTSID="{7E42240C-7B38-4CA5-80E7-BB6385E72506}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Tipo_Cuenta"
+              DTS:DTSID="{ED935227-5B6F-4212-AC72-4FABD246433D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Cuenta"
+              DTS:DTSID="{23BABA2D-79F5-488B-94DB-236FC43E9D26}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Id_Cliente"
+              DTS:DTSID="{BB4F2DCA-D2CF-46F6-B246-6576275285F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Tipo_Cuenta"
+              DTS:DTSID="{CFE3E6D0-17B0-4835-A714-24E606D74F67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Cuenta"
+              DTS:DTSID="{AE9FC51D-D5F1-4648-B368-98E3F09A6AC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Id_Cliente"
+              DTS:DTSID="{902206DA-B17B-4D5F-B9AF-2E015B262030}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Comercio"
+              DTS:DTSID="{9B3E40A4-296E-4D27-A71C-B9CA3BBB9972}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Servicio"
+              DTS:DTSID="{FE7FE5EC-7B13-444B-8D20-B2B0B3CB093C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Concepto"
+              DTS:DTSID="{2D76DE68-8F94-4956-B125-0FE089D699CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo_tarjeta"
+              DTS:DTSID="{56194631-C7BF-4CB7-AB7A-90F1D6E8407A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Marca_Tarjeta"
+              DTS:DTSID="{9FEE3C03-0803-41B2-A7B3-9E4202A4903D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nro_Tarjeta"
+              DTS:DTSID="{93C4BAE4-2A9E-45EC-8F29-4CB25631D4A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="terminal"
+              DTS:DTSID="{92D57496-40C1-4397-91B3-C8FED791D433}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Comprobante"
+              DTS:DTSID="{7B17AC4B-1F63-4E9A-84B5-C8073C535E88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Pais"
+              DTS:DTSID="{79534ADF-E8F3-4529-AAD4-A674495F8E45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Moneda"
+              DTS:DTSID="{16DDB2F6-3B0B-48C3-9771-C51039EA3CA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origen_Monto"
+              DTS:DTSID="{833AB505-B5BB-47CE-804F-E7B49AC37EA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Moneda"
+              DTS:DTSID="{AE5E2488-F9F4-4D00-A9DE-84E9A2DA5AAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destino_Monto"
+              DTS:DTSID="{7D503410-ECE4-4BC0-986A-414B4AB1A019}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cod_Respuesta"
+              DTS:DTSID="{79453910-972A-4637-B764-FEE55297C428}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of Fecha_operacion"
+              DTS:DTSID="{C932B902-9903-4B04-89C7-16D2EAED22AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of Origen_Monto"
+              DTS:DTSID="{E180E7CD-CA8F-44AC-B789-06843B20FE37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of Origen_Id_Cliente"
+              DTS:DTSID="{B251EAE6-137D-4F90-B5E7-3B63B4CC25A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of terminal"
+              DTS:DTSID="{6392E79C-2E26-4C49-AC84-B3EBB73D2128}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of ID_Canal"
+              DTS:DTSID="{3A987438-B7B9-471E-8FB8-A5963694F4CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of ID_Operatoria"
+              DTS:DTSID="{E2A1A36B-831F-4A95-AE30-1A181B5283C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of ID_Operacion"
+              DTS:DTSID="{51AEEFE0-ED81-43D5-9EC0-4422AC05A537}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of Cod_Respuesta"
+              DTS:DTSID="{6A0392F8-47E2-4DB5-8A26-44224CF00195}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_Cliente_unif"
+              DTS:DTSID="{E119510B-9028-4242-9C07-0E7B86B32C13}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_Cliente_sec"
+              DTS:DTSID="{83CE0028-14FC-40AA-BF84-59D916E05C5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{6847EA5E-8783-4514-86C9-B43ABE2EFAB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{114F4AB0-F463-48A2-8BC2-CCBA72256EAB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[lugar_transaccion]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{FA01C706-A083-40AD-8E26-05006F0C4035}"
@@ -2660,7 +3158,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\lugar_transacciones_tpi.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\lugar_transacciones_tpi.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3157,6 +3655,18 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.clientes_bdd]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ce7212dc-62e7-4058-a045-29bdd4082c12}"
+      DTS:ObjectName="WIN-IJ15L5HV6D9.clientes_bdd">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-CNNK3AU;Initial Catalog=clientes_bdd;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{B8D919DC-C069-4D75-8CC7-9350C4C9577B}WIN-IJ15L5HV6D9.tpi_bi;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3657,7 +4167,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">'Sheet11 (3)$'</property>
+                  name="OpenRowset">'clientes-cleansing-v1-test$'</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3684,8 +4194,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_clientes\Clientes.Connections[OleDbConnection]"
-                  connectionManagerID="{52A55C54-13FB-4933-8DBD-500A1C0FA38E}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[clientes]"
+                  connectionManagerID="Package.ConnectionManagers[clientes-matching-quality]"
+                  connectionManagerRefId="Package.ConnectionManagers[clientes-matching-quality]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3810,6 +4320,26 @@
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[moneda]"
                       name="moneda"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[CP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[CP]"
+                      length="255"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[CP]"
+                      name="CP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[titulo_trabajo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[titulo_trabajo]"
+                      length="255"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[titulo_trabajo]"
+                      name="titulo_trabajo"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3869,6 +4399,16 @@
                       dataType="wstr"
                       length="255"
                       name="moneda" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[CP]"
+                      dataType="wstr"
+                      length="255"
+                      name="CP" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[titulo_trabajo]"
+                      dataType="wstr"
+                      length="255"
+                      name="titulo_trabajo" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3905,6 +4445,12 @@
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[Direccion]"
                       name="Direccion" />
                     <outputColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[CP]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[CP]"
+                      name="CP" />
+                    <outputColumn
                       refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[ciudad]"
                       dataType="wstr"
                       length="255"
@@ -3934,6 +4480,12 @@
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[genero]"
                       name="genero" />
                     <outputColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[titulo_trabajo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[titulo_trabajo]"
+                      name="titulo_trabajo" />
+                    <outputColumn
                       refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[ingresos]"
                       dataType="r8"
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[ingresos]"
@@ -3954,52 +4506,6 @@
                       refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\carga_dim_clientes\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\carga_dim_clientes\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\carga_dim_clientes\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\carga_dim_clientes\Data Conversion.Inputs[Data Conversion Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\carga_dim_clientes\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\carga_dim_clientes\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\carga_dim_clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\carga_dim_clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\carga_dim_clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\carga_dim_clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -4075,7 +4581,7 @@
                 <input
                   refId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -4224,18 +4730,217 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\carga_dim_clientes\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\carga_dim_clientes\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Errores_DIMClientes]"
+                  connectionManagerRefId="Package.ConnectionManagers[Errores_DIMClientes]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[id]"
+                      cachedDataType="r8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Apellido]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[Apellido]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[id_sucursal]"
+                      cachedDataType="r8"
+                      cachedName="id_sucursal"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_sucursal]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[id_sucursal]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[Direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Direccion]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[Direccion]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ciudad"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ciudad]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[ciudad]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[pais]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pais"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pais]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[pais]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[fechanac]"
+                      cachedDataType="date"
+                      cachedName="fechanac"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fechanac]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[fechanac]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[genero]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="genero"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[genero]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[genero]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[ingresos]"
+                      cachedDataType="r8"
+                      cachedName="ingresos"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ingresos]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[ingresos]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[moneda]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="moneda"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[moneda]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[moneda]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\carga_dim_clientes\DimClientes.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\carga_dim_clientes\DimClientes.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_sucursal]"
+                      dataType="r8"
+                      name="id_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Direccion]"
+                      dataType="wstr"
+                      length="255"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pais]"
+                      dataType="wstr"
+                      length="255"
+                      name="pais" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fechanac]"
+                      dataType="date"
+                      name="fechanac" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[genero]"
+                      dataType="wstr"
+                      length="255"
+                      name="genero" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ingresos]"
+                      dataType="r8"
+                      name="ingresos" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[moneda]"
+                      dataType="wstr"
+                      length="255"
+                      name="moneda" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\carga_dim_clientes.Paths[Data Conversion Output]"
-              endId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\carga_dim_clientes\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\carga_dim_clientes.Paths[Excel Source Output]"
-              endId="Package\carga_dim_clientes\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
               startId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\carga_dim_clientes.Paths[OLE DB Destination Error Output]"
+              endId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Destination Error Output"
+              startId="Package\carga_dim_clientes\DimClientes.Outputs[OLE DB Destination Error Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5645,7 +6350,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="carga_dim_tiempo"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5726,11 +6431,6 @@
                       cachedName="id_Canal"
                       lineageId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Match Output].Columns[id_Canal]" />
                     <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Aggregate.Inputs[Aggregate Input 1].Columns[id_Cliente]"
-                      cachedDataType="i4"
-                      cachedName="id_Cliente"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
-                    <inputColumn
                       refId="Package\carga_tabla_hechos_transacciones\Aggregate.Inputs[Aggregate Input 1].Columns[id_Res_Op]"
                       cachedDataType="i4"
                       cachedName="id_Res_Op"
@@ -5740,6 +6440,11 @@
                       cachedDataType="i4"
                       cachedName="Dateid"
                       lineageId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Match Output].Columns[Dateid]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Aggregate.Inputs[Aggregate Input 1].Columns[id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="id_Cliente"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -5953,7 +6658,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]}</property>
+                          name="AggregationColumnId">#{Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -6297,107 +7002,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\carga_tabla_hechos_transacciones\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input].Columns[ID_Operatoria]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ID_Operatoria"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operatoria]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[TRIM](#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operatoria]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">TRIM(ID_Operatoria)</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input].Columns[ID_Operacion]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ID_Operacion"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operacion]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[TRIM](#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operacion]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">TRIM(ID_Operacion)</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\carga_tabla_hechos_transacciones\Error_Canales"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -6672,11 +7276,11 @@
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
                       lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
                     <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input].Columns[id_Cliente]"
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input].Columns[id_Cliente_unif]"
                       cachedDataType="i4"
-                      cachedName="id_Cliente"
+                      cachedName="id_Cliente_unif"
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -7338,6 +7942,483 @@
               </inputs>
             </component>
             <component
+              refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Error_Clientes_unif"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[error_clientes_unificado]"
+                  connectionManagerRefId="Package.ConnectionManagers[error_clientes_unificado]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[ID_Operatoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_Operatoria"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ID_Operatoria]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operatoria]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[ID_Canal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_Canal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ID_Canal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Canal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[ID_Operacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_Operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ID_Operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operacion]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Fecha_operacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fecha_operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Fecha_operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Fecha_operacion]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Origen_Tipo_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Tipo_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Tipo_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Tipo_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Origen_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Origen_Id_Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Id_Cliente"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Id_Cliente]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Id_Cliente]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Destino_Tipo_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Tipo_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Tipo_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Tipo_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Destino_Cuenta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Cuenta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Cuenta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Cuenta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Destino_Id_Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Id_Cliente"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Id_Cliente]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Id_Cliente]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Comercio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Comercio"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Comercio]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Comercio]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Servicio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Servicio"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Servicio]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Servicio]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Concepto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Concepto"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Concepto]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Concepto]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Tipo_tarjeta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Tipo_tarjeta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Tipo_tarjeta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Tipo_tarjeta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Marca_Tarjeta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Marca_Tarjeta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Marca_Tarjeta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Marca_Tarjeta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Nro_Tarjeta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nro_Tarjeta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Nro_Tarjeta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Nro_Tarjeta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[terminal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="terminal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[terminal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[terminal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Comprobante]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Comprobante"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Comprobante]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Comprobante]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Origen_Pais]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Pais"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Pais]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Pais]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Origen_Moneda]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Moneda"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Moneda]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Moneda]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Origen_Monto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origen_Monto"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Monto]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Origen_Monto]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Destino_Moneda]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Moneda"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Moneda]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Moneda]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Destino_Monto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destino_Monto"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Monto]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Destino_Monto]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Cod_Respuesta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cod_Respuesta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Cod_Respuesta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[Cod_Respuesta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Copy of Origen_Id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Origen_Id_Cliente"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of Origen_Id_Cliente]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Origen_Id_Cliente]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Copy of ID_Canal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of ID_Canal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Canal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Canal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Copy of ID_Operatoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of ID_Operatoria"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operatoria]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Operatoria]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Copy of ID_Operacion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of ID_Operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID_Operacion]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Copy of Cod_Respuesta]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Cod_Respuesta"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of Cod_Respuesta]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cod_Respuesta]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Copy of terminal]"
+                      cachedDataType="i4"
+                      cachedName="Copy of terminal"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of terminal]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of terminal]" />
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].Columns[Copy of Fecha_operacion]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of Fecha_operacion"
+                      externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ID_Operatoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_Operatoria" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ID_Canal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_Canal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ID_Operacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_Operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Fecha_operacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fecha_operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Tipo_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Tipo_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Id_Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Tipo_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Tipo_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Cuenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Cuenta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Id_Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Comercio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Comercio" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Servicio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Servicio" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Concepto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Concepto" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Tipo_tarjeta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tipo_tarjeta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Marca_Tarjeta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Marca_Tarjeta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Nro_Tarjeta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nro_Tarjeta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[terminal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="terminal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Comprobante]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Comprobante" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Pais]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Pais" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Moneda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Moneda" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Origen_Monto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origen_Monto" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Moneda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Moneda" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Destino_Monto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Destino_Monto" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Cod_Respuesta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cod_Respuesta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of Origen_Id_Cliente]"
+                      dataType="i4"
+                      name="Copy of Origen_Id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Canal]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of ID_Canal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operatoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of ID_Operatoria" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of ID_Operacion]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of ID_Operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of Cod_Respuesta]"
+                      dataType="wstr"
+                      length="50"
+                      name="Copy of Cod_Respuesta" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of terminal]"
+                      dataType="i4"
+                      name="Copy of terminal" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
+                      dataType="dbDate"
+                      name="Copy of Fecha_operacion" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[Copy of Origen_Monto]"
+                      dataType="r4"
+                      name="Copy of Origen_Monto" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente_unif]"
+                      dataType="i4"
+                      name="id_Cliente_unif" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente_sec]"
+                      dataType="i4"
+                      name="id_Cliente_sec" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
               refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -7604,11 +8685,11 @@
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
                       lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
                     <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[id_Cliente]"
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[id_Cliente_unif]"
                       cachedDataType="i4"
-                      cachedName="id_Cliente"
+                      cachedName="id_Cliente_unif"
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]" />
                     <inputColumn
                       refId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input].Columns[id_Canal]"
                       cachedDataType="wstr"
@@ -8115,11 +9196,11 @@
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
                       lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
                     <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input].Columns[id_Cliente]"
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input].Columns[id_Cliente_unif]"
                       cachedDataType="i4"
-                      cachedName="id_Cliente"
+                      cachedName="id_Cliente_unif"
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]" />
                     <inputColumn
                       refId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input].Columns[id_Canal]"
                       cachedDataType="wstr"
@@ -8594,11 +9675,11 @@
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
                       lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
                     <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input].Columns[id_Cliente]"
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input].Columns[id_Cliente_unif]"
                       cachedDataType="i4"
-                      cachedName="id_Cliente"
+                      cachedName="id_Cliente_unif"
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]" />
                     <inputColumn
                       refId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input].Columns[id_Canal]"
                       cachedDataType="wstr"
@@ -9095,11 +10176,11 @@
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input].ExternalColumns[Copy of Fecha_operacion]"
                       lineageId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fecha_operacion]" />
                     <inputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input].Columns[id_Cliente]"
+                      refId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input].Columns[id_Cliente_unif]"
                       cachedDataType="i4"
-                      cachedName="id_Cliente"
+                      cachedName="id_Cliente_unif"
                       externalMetadataColumnId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input].ExternalColumns[id_Cliente]"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]" />
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]" />
                     <inputColumn
                       refId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input].Columns[id_Canal]"
                       cachedDataType="wstr"
@@ -9540,14 +10621,14 @@ where [refTable].[id_Canal] = ? and [refTable].[id_Operatoria] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Clientes]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[clients_lookup]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Clientes]) [refTable]
-where [refTable].[id_Cliente] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[clients_lookup]) [refTable]
+where [refTable].[id_secundario] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -9578,7 +10659,7 @@ where [refTable].[id_Cliente] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id_Cliente" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="apellido" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_sucursal" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="domicilio" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre_Ciudad" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre_Pais" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="email" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="fechaNac" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="genero" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id_secundario" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_unificado" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -9596,8 +10677,8 @@ where [refTable].[id_Cliente] = ?</property>
               <connections>
                 <connection
                   refId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.clientes_bdd]"
+                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.clientes_bdd]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -9615,7 +10696,7 @@ where [refTable].[id_Cliente] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">id_Cliente</property>
+                          name="JoinToReferenceColumn">id_secundario</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -9636,17 +10717,17 @@ where [refTable].[id_Cliente] = ?</property>
                   synchronousInputId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]"
+                      refId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente]"
-                      name="id_Cliente"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]"
+                      name="id_Cliente_unif"
                       truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">id_Cliente</property>
+                          name="CopyFromReferenceColumn">id_unificado</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -10345,6 +11426,164 @@ where [refTable].[Date] = ?</property>
                       refId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup_clientes_unif"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Clientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Clientes]) [refTable]
+where [refTable].[id_Cliente] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id_Cliente" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="apellido" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_sucursal" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="domicilio" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre_Ciudad" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre_Pais" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="email" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="fechaNac" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="genero" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Inputs[Lookup Input].Columns[id_Cliente_unif]"
+                      cachedDataType="i4"
+                      cachedName="id_Cliente_unif"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output].Columns[id_Cliente_unif]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id_Cliente</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]"
+                      name="id_Cliente"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">id_Cliente</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -11450,6 +12689,107 @@ where [refTable].[Date] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\carga_tabla_hechos_transacciones\TRIM Columns"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="TRIM Columns"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Inputs[Derived Column Input].Columns[ID_Operatoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_Operatoria"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operatoria]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operatoria]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(ID_Operatoria)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Inputs[Derived Column Input].Columns[ID_Operacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_Operacion"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operacion]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output].Columns[ID_Operacion]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(ID_Operacion)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -11463,45 +12803,25 @@ where [refTable].[Date] = ?</property>
               name="Data Conversion Output"
               startId="Package\carga_tabla_hechos_transacciones\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
-              endId="Package\carga_tabla_hechos_transacciones\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+              endId="Package\carga_tabla_hechos_transacciones\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Outputs[Derived Column Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output2]"
-              endId="Package\carga_tabla_hechos_transacciones\Data Conversion.Inputs[Data Conversion Input]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
+              endId="Package\carga_tabla_hechos_transacciones\replace_null.Inputs[Derived Column Input]"
               name="Derived Column Output"
-              startId="Package\carga_tabla_hechos_transacciones\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Output]" />
             <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output2]"
               endId="Package\carga_tabla_hechos_transacciones\REPLACE_0to00.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\carga_tabla_hechos_transacciones\replace_null.Outputs[Derived Column Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
-              endId="Package\carga_tabla_hechos_transacciones\replace_null.Inputs[Derived Column Input]"
+              endId="Package\carga_tabla_hechos_transacciones\TRIM Columns.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\carga_tabla_hechos_transacciones\Transacciones.Outputs[Flat File Source Output]" />
-            <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
-              endId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Error Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
               endId="Package\carga_tabla_hechos_transacciones\Error_Clientes.Inputs[Flat File Destination Input]"
@@ -11509,9 +12829,39 @@ where [refTable].[Date] = ?</property>
               startId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Error Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
               endId="Package\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input]"
               name="Lookup Error Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Respuesta.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output6]"
+              endId="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output6]"
+              endId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
               endId="Package\carga_tabla_hechos_transacciones\Lookup Operaciones.Inputs[Lookup Input]"
@@ -11539,7 +12889,7 @@ where [refTable].[Date] = ?</property>
               startId="Package\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Match Output]" />
             <path
               refId="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
-              endId="Package\carga_tabla_hechos_transacciones\Lookup Canales.Inputs[Lookup Input]"
+              endId="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Match Output]" />
           </paths>
@@ -11555,7 +12905,7 @@ where [refTable].[Date] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="limpio_tablas"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -11573,7 +12923,7 @@ where [refTable].[Date] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="limpio_tabla_hechos_transacciones"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -11655,23 +13005,23 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\carga_dim_canales"
-          TopLeft="85,301" />
+          TopLeft="71.6666671964857,306.200000041326" />
         <NodeLayout
-          Size="174.4,41.6"
+          Size="168,41.6"
           Id="Package\carga_dim_clientes"
           TopLeft="78,227" />
         <NodeLayout
           Size="223.2,41.6"
           Id="Package\carga_dim_lugar_transaccion"
-          TopLeft="554.5,374.5" />
+          TopLeft="560.333333101538,396.166666838858" />
         <NodeLayout
           Size="196,41.6"
           Id="Package\carga_dim_operaciones"
-          TopLeft="70,381" />
+          TopLeft="56.6666671964857,387.06666671488" />
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\carga_dim_respuestas"
-          TopLeft="321,376" />
+          TopLeft="304.333333995607,391.600000123978" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\carga_dim_tiempo"
@@ -11679,7 +13029,7 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="241.6,41.6"
           Id="Package\carga_tabla_hechos_transacciones"
-          TopLeft="869.5,368.5" />
+          TopLeft="873.666666501098,389.300000165304" />
         <NodeLayout
           Size="252.8,41.6"
           Id="Package\limpio_tabla_hechos_transacciones"
@@ -11690,18 +13040,18 @@ where [refTable].[Date] = ?</property>
           TopLeft="84.5,63.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="163.25,183.5">
+          TopLeft="161.65,183.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.5"
+              EndConnector="0,43.9"
               Start="0,0"
-              End="0,36">
+              End="0,36.4">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36" />
+                    End="0,36.4" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11712,18 +13062,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="168.5,269">
+          TopLeft="160.433333598243,268.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32"
+              EndConnector="0,37.600000041326"
               Start="0,0"
-              End="0,24.5">
+              End="0,30.100000041326">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,30.100000041326" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11734,18 +13084,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="170,343">
+          TopLeft="156.766667196486,347.800000041326">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,39.2666666735544"
               Start="0,0"
-              End="0,30.5">
+              End="0,31.7666666735544">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,31.7666666735544" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11756,18 +13106,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="266,399.5">
+          TopLeft="252.666667196486,410.133333419429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="55,0"
+              EndConnector="51.6666667991213,0"
               Start="0,0"
-              End="47.5,0">
+              End="44.1666667991213,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="47.5,0" />
+                    End="44.1666667991213,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11778,18 +13128,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="511,396.25">
+          TopLeft="494.733333995607,414.683333481418">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43.5,0"
+              EndConnector="65.5999991059306,0"
               Start="0,0"
-              End="36,0">
+              End="58.0999991059306,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="36,0" />
+                    End="58.0999991059306,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11800,18 +13150,18 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="777.7,392.3">
+          TopLeft="783.533333101538,413.533333502081">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="91.8,0"
+              EndConnector="90.1333333995605,0"
               Start="0,0"
-              End="84.3,0">
+              End="82.6333333995605,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="84.3,0" />
+                    End="82.6333333995605,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11967,79 +13317,81 @@ where [refTable].[Date] = ?</property>
     design-time-name="Package\carga_dim_clientes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="137.6,41.6"
+          Size="137.6,42.4"
           Id="Package\carga_dim_clientes\DimClientes"
-          TopLeft="316,317" />
+          TopLeft="385,354" />
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\carga_dim_clientes\Data Conversion"
-          TopLeft="254,190" />
-        <NodeLayout
-          Size="119.2,41.6"
+          Size="116,41.6"
           Id="Package\carga_dim_clientes\Clientes"
-          TopLeft="232,56" />
+          TopLeft="271,216" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\carga_dim_clientes\Flat File Destination"
+          TopLeft="528,463" />
         <EdgeLayout
-          Id="Package\carga_dim_clientes.Paths[Excel Source Output]"
-          TopLeft="291.5,98">
+          Id="Package\carga_dim_clientes.Paths[OLE DB Destination Error Output]"
+          TopLeft="453.8,396.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43,92"
+              EndConnector="159.4,66.6000000000001"
               Start="0,0"
-              End="43,84.5">
+              End="159.4,59.1000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42" />
+                    End="0,29.3000000000001" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42"
-                    Point2="0,46"
-                    Point3="4,46" />
+                    Point1="0,29.3000000000001"
+                    Point2="0,33.3000000000001"
+                    Point3="4,33.3000000000001" />
                   <mssgle:LineSegment
-                    End="39,46" />
+                    End="155.4,33.3000000000001" />
                   <mssgle:CubicBezierSegment
-                    Point1="39,46"
-                    Point2="43,46"
-                    Point3="43,50" />
+                    Point1="155.4,33.3000000000001"
+                    Point2="159.4,33.3000000000001"
+                    Point3="159.4,37.3000000000001" />
                   <mssgle:LineSegment
-                    End="43,84.5" />
+                    End="159.4,59.1000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="6.49109374999999,38.3000000000001,146.4178125,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\carga_dim_clientes.Paths[Data Conversion Output]"
-          TopLeft="334.5,232">
+          Id="Package\carga_dim_clientes.Paths[Excel Source Output]"
+          TopLeft="329,257.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50.5,85"
+              EndConnector="124.8,96.4"
               Start="0,0"
-              End="50.5,77.5">
+              End="124.8,88.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.5" />
+                    End="0,44.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.5"
-                    Point2="0,42.5"
-                    Point3="4,42.5" />
+                    Point1="0,44.2"
+                    Point2="0,48.2"
+                    Point3="4,48.2" />
                   <mssgle:LineSegment
-                    End="46.5,42.5" />
+                    End="120.8,48.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="46.5,42.5"
-                    Point2="50.5,42.5"
-                    Point3="50.5,46.5" />
+                    Point1="120.8,48.2"
+                    Point2="124.8,48.2"
+                    Point3="124.8,52.2" />
                   <mssgle:LineSegment
-                    End="50.5,77.5" />
+                    End="124.8,88.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12317,7 +13669,7 @@ where [refTable].[Date] = ?</property>
     design-time-name="Package\carga_dim_respuestas">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="156.8,41.6"
           Id="Package\carga_dim_respuestas\DimRespuestas"
@@ -12361,7 +13713,9 @@ where [refTable].[Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12395,7 +13749,9 @@ where [refTable].[Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12435,286 +13791,82 @@ where [refTable].[Date] = ?</property>
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Respuesta"
-          TopLeft="878.5,401.961538461539" />
+          TopLeft="878.5,402.683760689501" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Error_Clientes"
-          TopLeft="30,495.461538461539" />
+          TopLeft="30,496.183760689501" />
         <NodeLayout
           Size="145.6,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Error_Tiempo"
-          TopLeft="560,119.461538461538" />
+          TopLeft="560,120.1837606895" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Error_Canales"
-          TopLeft="307,501.461538461538" />
+          TopLeft="371.999997417132,531.650427590347" />
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Clientes"
-          TopLeft="26,392.461538461539" />
+          TopLeft="28.499999900659,393.183760689501" />
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Error_Respuesta"
-          TopLeft="877,494.461538461539" />
+          TopLeft="877,495.183760689501" />
         <NodeLayout
           Size="224,41.6"
           Id="Package\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
-          TopLeft="1443.5,124.524696356275" />
+          TopLeft="1443.5,125.246918584237" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\carga_tabla_hechos_transacciones\TRIM Columns"
+          TopLeft="19.7329064520166,78.6367508567978" />
         <NodeLayout
           Size="204,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
-          TopLeft="562,241.461538461538" />
+          TopLeft="562,242.1837606895" />
         <NodeLayout
           Size="137.6,41.6"
           Id="Package\carga_tabla_hechos_transacciones\replace_null"
-          TopLeft="25.7793317793318,74.5827505827515" />
+          TopLeft="23.001554111933,150.416084518754" />
         <NodeLayout
           Size="208.8,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion"
-          TopLeft="861,241.461538461538" />
+          TopLeft="861,242.1837606895" />
         <NodeLayout
           Size="151.2,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Transacciones"
-          TopLeft="26.8247863247864,0.486790986790979" />
+          TopLeft="17.1025644888905,8.4312354943722" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Data Conversion"
-          TopLeft="23.1111111111111,315.461538461539" />
+          TopLeft="23.1111111111111,316.183760689501" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Canales"
-          TopLeft="299.5,399.961538461539" />
+          TopLeft="299.5,400.683760689501" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\carga_tabla_hechos_transacciones\REPLACE_0to00"
-          TopLeft="14.7692307692308,162.461538461538" />
+          TopLeft="11.991453101832,227.461538978112" />
         <NodeLayout
           Size="180,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Operaciones"
-          TopLeft="575,401.461538461539" />
+          TopLeft="575,402.183760689501" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Error_Operaciones"
-          TopLeft="582,499.461538461539" />
+          TopLeft="582,500.183760689501" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Aggregate"
-          TopLeft="1198.71428571429,128.032967032967" />
+          TopLeft="1198.71428571429,128.755189260929" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\carga_tabla_hechos_transacciones\Lookup Tiempo"
-          TopLeft="888,124.461538461538" />
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
-          TopLeft="379.25,441.561538461539">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.8999999999999"
-              Start="0,0"
-              End="0,52.3999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.3999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,20.3953125,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
-          TopLeft="888,142.961538461538">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-182,0"
-              Start="0,0"
-              End="-174.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-174.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-133.11638671875,5,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
-          TopLeft="861,262.461538461539">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-95,0"
-              Start="0,0"
-              End="-87.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-87.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-89.61638671875,5,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
-          TopLeft="961,443.961538461539">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.5"
-              Start="0,0"
-              End="0,43">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,15.6953125,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
-          TopLeft="98.5520590520588,42.4867909867905">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.0959595959605"
-              Start="0,0"
-              End="0,24.5959595959605">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5959595959605" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
-          TopLeft="95.7742812742818,116.582750582751">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.878787878787"
-              Start="0,0"
-              End="0,38.378787878787">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.378787878787" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Data Conversion Output]"
-          TopLeft="103.155555555556,357.061538461539">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.4"
-              Start="0,0"
-              End="0,27.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Aggregate Output 1]"
-          TopLeft="1328.71428571429,147.278831694621">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114.78571428571,0"
-              Start="0,0"
-              End="107.28571428571,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="107.28571428571,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
-          TopLeft="184.4,417.011538461538">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="115.1,0"
-              Start="0,0"
-              End="107.6,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="107.6,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="5.60861328124999,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="888,125.1837606895" />
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
-          TopLeft="1043,147.247252747252">
+          TopLeft="1043,147.969474975214">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12738,7 +13890,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
-          TopLeft="965.5,241.461538461538">
+          TopLeft="965.5,242.1837606895">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12762,7 +13914,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
-          TopLeft="964.75,401.961538461539">
+          TopLeft="964.75,402.683760689501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12786,7 +13938,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
-          TopLeft="755,422.711538461539">
+          TopLeft="755,423.433760689501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12810,7 +13962,7 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
-          TopLeft="453.1,421.511538461538">
+          TopLeft="453.1,422.2337606895">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12828,37 +13980,121 @@ where [refTable].[Date] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="9.00861328124999,5,96.3827734375,11.609375"
+              BoundingBox="9.00861328125,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
-          TopLeft="104.75,434.461538461539">
+          TopLeft="106.049999950329,434.783760689501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,61.3999999999999"
               Start="0,0"
-              End="0,53.5">
+              End="0,53.8999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,53.8999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,20.9453125,91.7327734375,11.609375"
+              BoundingBox="-45.86638671875,21.1453125,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
-          TopLeft="665.1,443.061538461539">
+          TopLeft="400.566666666667,442.283760689501">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.6333307504655,89.3666669008455"
+              Start="0,0"
+              End="46.6333307504655,81.8666669008455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.2994502669414" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.2994502669414"
+                    Point2="0,36.2994502669414"
+                    Point3="4,36.2994502669414" />
+                  <mssgle:LineSegment
+                    End="42.6333307504655,36.2994502669414" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.6333307504655,36.2994502669414"
+                    Point2="46.6333307504655,36.2994502669414"
+                    Point3="46.6333307504655,40.2994502669414" />
+                  <mssgle:LineSegment
+                    End="46.6333307504655,81.8666669008455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-22.5497213435173,41.2994502669414,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
+          TopLeft="888,143.6837606895">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-182,0"
+              Start="0,0"
+              End="-174.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-174.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.11638671875,5,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
+          TopLeft="861,263.183760689501">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-95,0"
+              Start="0,0"
+              End="-87.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-87.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.61638671875,5,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
+          TopLeft="665.1,443.783760689501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12880,36 +14116,44 @@ where [refTable].[Date] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\carga_tabla_hechos_transacciones\Derived Column"
-          TopLeft="31.5384615384615,239.692307692308" />
         <EdgeLayout
-          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
-          TopLeft="96.7692307692308,204.061538461538">
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
+          TopLeft="961,444.683760689501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.1692307692308,35.6307692307692"
+              EndConnector="0,50.5"
               Start="0,0"
-              End="11.1692307692308,28.1307692307692">
+              End="0,43">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.8153846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.8153846153846"
-                    Point2="0,17.8153846153846"
-                    Point3="4,17.8153846153846" />
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,15.6953125,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Flat File Source Output]"
+          TopLeft="93.2177354704535,50.0312354943722">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.6055153624256"
+              Start="0,0"
+              End="0,21.1055153624256">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="7.16923076923078,17.8153846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.16923076923078,17.8153846153846"
-                    Point2="11.1692307692308,17.8153846153846"
-                    Point3="11.1692307692308,21.8153846153846" />
-                  <mssgle:LineSegment
-                    End="11.1692307692308,28.1307692307692" />
+                    End="0,21.1055153624256" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12920,24 +14164,216 @@ where [refTable].[Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output2]"
-          TopLeft="104.524786324786,281.292307692308">
+          TopLeft="92.8965036068825,192.016084518754">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.1692307692308"
+              EndConnector="0,35.4454544593576"
               Start="0,0"
-              End="0,26.6692307692308">
+              End="0,27.9454544593576">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6692307692308" />
+                    End="0,27.9454544593576" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
+          TopLeft="92.7672302819748,120.236750856798">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.1793336619563"
+              Start="0,0"
+              End="0,22.6793336619563">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6793336619563" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+          TopLeft="97.5512821064715,269.061538978112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.1222217113893"
+              Start="0,0"
+              End="0,39.6222217113893">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6222217113893" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Data Conversion Output]"
+          TopLeft="104.405555505885,357.783760689501">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.4"
+              Start="0,0"
+              End="0,27.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Aggregate Output 1]"
+          TopLeft="1328.71428571429,148.001053922583">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.78571428571,0"
+              Start="0,0"
+              End="107.28571428571,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="107.28571428571,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif"
+          TopLeft="154.999993840854,575.466671240065" />
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
+          TopLeft="132.766666567326,434.783760689501">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.233327273528,140.682910550564"
+              Start="0,0"
+              End="110.233327273528,133.182910550564">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.1172616835289" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.1172616835289"
+                    Point2="0,57.1172616835289"
+                    Point3="4,57.1172616835289" />
+                  <mssgle:LineSegment
+                    End="106.233327273528,57.1172616835289" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.233327273528,57.1172616835289"
+                    Point2="110.233327273528,57.1172616835289"
+                    Point3="110.233327273528,61.1172616835289" />
+                  <mssgle:LineSegment
+                    End="110.233327273528,133.182910550564" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.92527691801403,62.1172616835289,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Match Output6]"
+          TopLeft="270.999993840854,575.466671240065">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.0333394924796,-133.182910550564"
+              Start="0,0"
+              End="81.0333394924796,-125.682910550564">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-62.4837270139168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-62.4837270139168"
+                    Point2="0,-66.4837270139168"
+                    Point3="4,-66.4837270139168" />
+                  <mssgle:LineSegment
+                    End="77.0333394924796,-66.4837270139168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.0333394924796,-66.4837270139168"
+                    Point2="81.0333394924796,-66.4837270139168"
+                    Point3="81.0333394924796,-70.4837270139168" />
+                  <mssgle:LineSegment
+                    End="81.0333394924796,-125.682910550564" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.67471697251019,-61.4837270139168,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\carga_tabla_hechos_transacciones\Error_Clientes_unif"
+          TopLeft="159.213669473969,687.65926391684" />
+        <EdgeLayout
+          Id="Package\carga_tabla_hechos_transacciones.Paths[Lookup Error Output6]"
+          TopLeft="242.906831657411,617.066671240065">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.592592676775"
+              Start="0,0"
+              End="0,63.092592676775">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.092592676775" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,25.7416088383875,91.7327734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12977,12 +14413,12 @@ where [refTable].[Date] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Clientes]</Value>
+          type="q3:string">[dbo].[clients_lookup]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13008,7 +14444,7 @@ where [refTable].[Date] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -13041,7 +14477,7 @@ where [refTable].[Date] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13088,6 +14524,29 @@ where [refTable].[Date] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\carga_tabla_hechos_transacciones\Lookup_clientes_unif">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Clientes]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
