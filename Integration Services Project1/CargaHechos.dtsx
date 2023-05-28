@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{D426B559-FA56-4CB2-BE43-5A222C3394FB}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{D491B158-F0CB-434F-8456-08FCB14F6D47}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -11737,19 +11737,19 @@ where [refTable].[id_Cliente] = ?</property>
                   startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\TRIM Columns.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output6]"
-                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input]"
+                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
-                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input]"
+                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes.Inputs[Flat File Destination Input]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
-                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input]"
+                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
                   endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Respuesta.Inputs[Flat File Destination Input]"
@@ -11757,19 +11757,19 @@ where [refTable].[id_Cliente] = ?</property>
                   startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Respuesta.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
-                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Operaciones.Inputs[Flat File Destination Input]"
+                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes_unif.Inputs[Flat File Destination Input]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
-                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes.Inputs[Flat File Destination Input]"
+                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Tiempo.Inputs[Flat File Destination Input]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Clientes.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
-                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Canales.Inputs[Flat File Destination Input]"
+                  endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion.Inputs[Flat File Destination Input]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Canales.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Canales.Inputs[Lookup Input]"
@@ -11873,6 +11873,14 @@ where [refTable].[id_Cliente] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\cargarTransacionesBd"
+          TopLeft="317.857147248424,157.658821566789" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Elimino los problemas"
+          TopLeft="322.142861607124,229.541175516088" />
+        <NodeLayout
           Size="241.6,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones"
           TopLeft="5.5,39.7235312715731" />
@@ -11887,36 +11895,6 @@ where [refTable].[id_Cliente] = ?</property>
           Size="176.8,41.6"
           Id="Package\Limpio tabla hechos"
           TopLeft="315.000004342625,67.4235261836267" />
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\cargarTransacionesBd"
-          TopLeft="317.857147248424,157.658821566789" />
-        <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Elimino los problemas"
-          TopLeft="322.142861607124,229.541175516088" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="410.600004427774,199.258821566789">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.282353949299"
-              Start="0,0"
-              End="0,22.782353949299">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.782353949299" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="406.028575795525,109.023526183627">
@@ -11931,6 +11909,28 @@ where [refTable].[id_Cliente] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,41.1352953831628" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="410.600004427774,199.258821566789">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.282353949299"
+              Start="0,0"
+              End="0,22.782353949299">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.782353949299" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11965,6 +11965,44 @@ where [refTable].[id_Cliente] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\cargarTransacionesBd">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\cargarTransacionesBd\OLE DB TransacBd"
+          TopLeft="202.85714631178,258.470591860247" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\cargarTransacionesBd\Flat File Source"
+          TopLeft="214.285717934978,130.764707716279" />
+        <EdgeLayout
+          Id="Package\cargarTransacionesBd.Paths[Flat File Source Output]"
+          TopLeft="287.771432123379,172.364707716279">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86.105884143968"
+              Start="0,0"
+              End="0,78.605884143968">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.605884143968" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
     design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones">
     <LayoutInfo>
       <GraphLayout
@@ -11973,6 +12011,10 @@ where [refTable].[id_Cliente] = ?</property>
           Size="158.4,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Clientes"
           TopLeft="64.4677312890365,637.105469910754" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\replace NULL x2"
+          TopLeft="161.451249915031,460.867242476203" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes"
@@ -11990,6 +12032,14 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo"
           TopLeft="923.967731388377,369.105469910753" />
         <NodeLayout
+          Size="148,41.6"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\TRIM Columns"
+          TopLeft="55.7006378403941,322.558460078051" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\REPLACE_0to00"
+          TopLeft="46.3718828758763,510.468216067778" />
+        <NodeLayout
           Size="167.2,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes_unif"
           TopLeft="195.181400862346,931.580973138093" />
@@ -12002,13 +12052,9 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Respuesta"
           TopLeft="912.967731388377,739.105469910754" />
         <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\replace NULL x2"
-          TopLeft="161.451249915031,460.867242476203" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\REPLACE_0to00"
-          TopLeft="46.3718828758763,510.468216067778" />
+          Size="148.8,41.6"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Replace comas"
+          TopLeft="53.9682548873276,241.790848588815" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif"
@@ -12022,6 +12068,10 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
           TopLeft="1395.79426057567,375.723249746156" />
         <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\replace_null"
+          TopLeft="57.9488773196677,395.430230730118" />
+        <NodeLayout
           Size="153.6,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Canales"
           TopLeft="335.467731388377,644.605469910754" />
@@ -12034,21 +12084,13 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones"
           TopLeft="610.967731388377,646.105469910754" />
         <NodeLayout
-          Size="148,41.6"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\TRIM Columns"
-          TopLeft="55.7006378403941,322.558460078051" />
-        <NodeLayout
           Size="204,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
           TopLeft="597.967731388377,486.105469910753" />
         <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Replace comas"
-          TopLeft="53.9682548873276,241.790848588815" />
-        <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\replace_null"
-          TopLeft="57.9488773196677,395.430230730118" />
+          Size="149.6,41.6"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\OLE DB Source"
+          TopLeft="53.0612253934232,139.949581409998" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Respuesta"
@@ -12062,55 +12104,221 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Tiempo"
           TopLeft="595.967731388377,364.105469910753" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
-          TopLeft="701.067731388377,687.705469910754">
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[OLE DB Source Output]"
+          TopLeft="128.114740140375,181.549581409998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.4"
+              EndConnector="0,60.2412671788175"
               Start="0,0"
-              End="0,48.9">
+              End="0,52.7412671788175">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.9" />
+                    End="0,52.7412671788175" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output6]"
+          TopLeft="1000.71773138838,646.605469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-118.5"
+              Start="0,0"
+              End="0,-111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,18.6453125,91.7327734375,11.609375"
+              BoundingBox="-48.19138671875,-61.3046875,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
-          TopLeft="142.017731338706,678.705469910754">
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
+          TopLeft="168.734397955703,678.705469910754">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.3999999999999"
+              EndConnector="110.233327273528,140.682910550564"
               Start="0,0"
-              End="0,53.8999999999999">
+              End="110.233327273528,133.182910550564">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.8999999999999" />
+                    End="0,53.1172616835289" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.1172616835289"
+                    Point2="0,57.1172616835289"
+                    Point3="4,57.1172616835289" />
+                  <mssgle:LineSegment
+                    End="106.233327273528,57.1172616835289" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.233327273528,57.1172616835289"
+                    Point2="110.233327273528,57.1172616835289"
+                    Point3="110.233327273528,61.1172616835289" />
+                  <mssgle:LineSegment
+                    End="110.233327273528,133.182910550564" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,21.1453125,91.7327734375,11.609375"
+              BoundingBox="6.925276918014,62.1172616835289,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
+          TopLeft="1079.16773138838,391.144965701412">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.3102030563696,0"
+              Start="0,0"
+              End="87.8102030563696,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="87.8102030563696,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.2862851905652,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
+          TopLeft="1001.46773138838,486.105469910753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-75"
+              Start="0,0"
+              End="0,-67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-39.5546875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
+          TopLeft="790.967731388377,667.355469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.5,0"
+              Start="0,0"
+              End="116,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.80861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
+          TopLeft="489.067731388377,666.155469910753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.9,0"
+              Start="0,0"
+              End="114.4,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="114.4,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.00861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
+          TopLeft="306.967725229231,819.388380461318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.0333394924796,-133.182910550564"
+              Start="0,0"
+              End="81.0333394924796,-125.682910550564">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-62.4837270139168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-62.4837270139168"
+                    Point2="0,-66.4837270139168"
+                    Point3="4,-66.4837270139168" />
+                  <mssgle:LineSegment
+                    End="77.0333394924796,-66.4837270139168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.0333394924796,-66.4837270139168"
+                    Point2="81.0333394924796,-66.4837270139168"
+                    Point3="81.0333394924796,-70.4837270139168" />
+                  <mssgle:LineSegment
+                    End="81.0333394924796,-125.682910550564" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.6747169725102,-61.4837270139168,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output6]"
           TopLeft="436.534398055044,686.205469910754">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12142,6 +12350,150 @@ where [refTable].[id_Cliente] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-22.5497213435173,41.2994502669414,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
+          TopLeft="142.017731338706,678.705469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.3999999999999"
+              Start="0,0"
+              End="0,53.8999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.8999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,21.1453125,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
+          TopLeft="701.067731388377,687.705469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.4"
+              Start="0,0"
+              End="0,48.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,18.6453125,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
+          TopLeft="996.967731388377,688.605469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5"
+              Start="0,0"
+              End="0,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,15.6953125,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output2]"
+          TopLeft="278.874563045788,860.988380461318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.592592676775"
+              Start="0,0"
+              End="0,63.092592676775">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.092592676775" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,25.7416088383875,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output1]"
+          TopLeft="923.967731388377,387.605469910753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-182,0"
+              Start="0,0"
+              End="-174.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-174.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.11638671875,5,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output]"
+          TopLeft="896.967731388377,507.105469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-95,0"
+              Start="0,0"
+              End="-87.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-87.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.61638671875,5,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12365,320 +12717,6 @@ where [refTable].[id_Cliente] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output6]"
-          TopLeft="1000.71773138838,646.605469910754">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-118.5"
-              Start="0,0"
-              End="0,-111">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-111" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-61.3046875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output5]"
-          TopLeft="168.734397955703,678.705469910754">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="110.233327273528,140.682910550564"
-              Start="0,0"
-              End="110.233327273528,133.182910550564">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.1172616835289" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,53.1172616835289"
-                    Point2="0,57.1172616835289"
-                    Point3="4,57.1172616835289" />
-                  <mssgle:LineSegment
-                    End="106.233327273528,57.1172616835289" />
-                  <mssgle:CubicBezierSegment
-                    Point1="106.233327273528,57.1172616835289"
-                    Point2="110.233327273528,57.1172616835289"
-                    Point3="110.233327273528,61.1172616835289" />
-                  <mssgle:LineSegment
-                    End="110.233327273528,133.182910550564" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="6.925276918014,62.1172616835289,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output4]"
-          TopLeft="1079.16773138838,391.144965701412">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.3102030563696,0"
-              Start="0,0"
-              End="87.8102030563696,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="87.8102030563696,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-4.2862851905652,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output3]"
-          TopLeft="1001.46773138838,486.105469910753">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-75"
-              Start="0,0"
-              End="0,-67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-39.5546875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output2]"
-          TopLeft="790.967731388377,667.355469910754">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.5,0"
-              Start="0,0"
-              End="116,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="116,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="9.80861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output1]"
-          TopLeft="489.067731388377,666.155469910753">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="121.9,0"
-              Start="0,0"
-              End="114.4,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="114.4,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="9.00861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Match Output]"
-          TopLeft="306.967725229231,819.388380461318">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81.0333394924796,-133.182910550564"
-              Start="0,0"
-              End="81.0333394924796,-125.682910550564">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-62.4837270139168" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-62.4837270139168"
-                    Point2="0,-66.4837270139168"
-                    Point3="4,-66.4837270139168" />
-                  <mssgle:LineSegment
-                    End="77.0333394924796,-66.4837270139168" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.0333394924796,-66.4837270139168"
-                    Point2="81.0333394924796,-66.4837270139168"
-                    Point3="81.0333394924796,-70.4837270139168" />
-                  <mssgle:LineSegment
-                    End="81.0333394924796,-125.682910550564" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-7.6747169725102,-61.4837270139168,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output6]"
-          TopLeft="896.967731388377,507.105469910754">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-95,0"
-              Start="0,0"
-              End="-87.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-87.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-89.61638671875,5,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output5]"
-          TopLeft="923.967731388377,387.605469910753">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-182,0"
-              Start="0,0"
-              End="-174.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-174.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-133.11638671875,5,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output4]"
-          TopLeft="278.874563045788,860.988380461318">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70.592592676775"
-              Start="0,0"
-              End="0,63.092592676775">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.092592676775" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,25.7416088383875,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Lookup Error Output3]"
-          TopLeft="996.967731388377,688.605469910754">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.5"
-              Start="0,0"
-              End="0,43">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,15.6953125,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\OLE DB Source"
-          TopLeft="53.0612253934232,139.949581409998" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[OLE DB Source Output]"
-          TopLeft="128.114740140375,181.549581409998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.2412671788175"
-              Start="0,0"
-              End="0,52.7412671788175">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.7412671788175" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -12758,43 +12796,5 @@ where [refTable].[id_Cliente] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\cargarTransacionesBd">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\cargarTransacionesBd\OLE DB TransacBd"
-          TopLeft="202.85714631178,258.470591860247" />
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\cargarTransacionesBd\Flat File Source"
-          TopLeft="214.285717934978,130.764707716279" />
-        <EdgeLayout
-          Id="Package\cargarTransacionesBd.Paths[Flat File Source Output]"
-          TopLeft="287.771432123379,172.364707716279">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,86.105884143968"
-              Start="0,0"
-              End="0,78.605884143968">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,78.605884143968" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
