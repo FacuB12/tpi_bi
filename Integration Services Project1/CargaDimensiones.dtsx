@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="156"
-  DTS:VersionGUID="{0F4E56F5-1CD2-4B2C-8159-2087FD2D05E1}">
+  DTS:VersionBuild="159"
+  DTS:VersionGUID="{BC36E0CC-20F7-4B85-8AEA-F767D52D45CA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,19 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\canales_v2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\canales_v2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[clientes]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C77A7B5E-EE89-4D4A-BE5B-8961A877D3FD}"
+      DTS:ObjectName="clientes">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\clientes\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -50,6 +62,18 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\Clientes-Matching-v1.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0DBEE10A-FFC1-4BE5-B581-B3CA46CAA232}"
+      DTS:ObjectName="DESKTOP-ESRC2J8.tpi_bi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ESRC2J8;Initial Catalog=tpi_bi;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{0DBEE10A-FFC1-4BE5-B581-B3CA46CAA232}DESKTOP-ESRC2J8.tpi_bi;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -2889,6 +2913,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C91C52A5-21DA-44CA-9EF9-48275EE54416}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[lugar_transaccion]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{FA01C706-A083-40AD-8E26-05006F0C4035}"
@@ -4155,30 +4191,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.clientes_bdd]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{ce7212dc-62e7-4058-a045-29bdd4082c12}"
-      DTS:ObjectName="WIN-IJ15L5HV6D9.clientes_bdd">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-CNNK3AU;Initial Catalog=clientes_bdd;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{B8D919DC-C069-4D75-8CC7-9350C4C9577B}WIN-IJ15L5HV6D9.tpi_bi;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}"
-      DTS:ObjectName="WIN-IJ15L5HV6D9.tpi_bi">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-CNNK3AU;Initial Catalog=tpi_bi;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{B8D919DC-C069-4D75-8CC7-9350C4C9577B}WIN-IJ15L5HV6D9.tpi_bi;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -4539,8 +4551,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_canales\DimCanales.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4665,7 +4677,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">'clientes-cleansing-v1-test$'</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -5070,8 +5082,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_clientes\DimClientes.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5562,8 +5574,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_lugar_transaccion\DimLugarTransaccion.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6093,8 +6105,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_operaciones\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6671,8 +6683,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_respuestas\DimRespuestas.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-IJ15L5HV6D9.tpi_bi]"
+                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7272,7 +7284,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}"
+          SQLTask:Connection="{0DBEE10A-FFC1-4BE5-B581-B3CA46CAA232}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="-- Declare and set variables for loop&#xA;Declare&#xA;@StartDate date,&#xA;@EndDate date,&#xA;@Date date&#xA;Set @StartDate = '2018-01-01'&#xA;Set @EndDate = '2024-01-01'&#xA;Set @Date = @StartDate&#xA;-- Loop through dates&#xA;WHILE @Date &lt;= @EndDate&#xA;BEGIN&#xA;    -- Check for leap year&#xA;    DECLARE @IsLeapYear BIT&#xA;    IF ((Year(@Date) % 4 = 0) AND (Year(@Date) % 100 != 0 OR Year(@Date) % 400 = 0))&#xA;    BEGIN&#xA;        SELECT @IsLeapYear = 1&#xA;    END&#xA;    ELSE&#xA;    BEGIN&#xA;        SELECT @IsLeapYear = 0&#xA;    END&#xA;    -- Check for weekend&#xA;    DECLARE @IsWeekend BIT&#xA;    IF (DATEPART(dw, @Date) = 1 OR DATEPART(dw, @Date) = 7)&#xA;    BEGIN&#xA;        SELECT @IsWeekend = 1&#xA;    END&#xA;    ELSE&#xA;    BEGIN&#xA;        SELECT @IsWeekend = 0&#xA;    END&#xA;    -- Insert record in dimension table if date does not exist&#xA;    IF NOT EXISTS ( SELECT 'X' from dbo.Tiempo (NOLOCK) where Date = @Date )&#xA;    BEGIN&#xA;   &#xA;   -- Insert record in dimension table&#xA;    INSERT Into Tiempo&#xA;    (&#xA;    [Date],&#xA;    [DateString],&#xA;    [Day],&#xA;    [DayofYear],&#xA;    [DayofWeek],&#xA;    [Dayofweekname],&#xA;    [Week],&#xA;    [Month],&#xA;    [MonthName],&#xA;    [Quarter],&#xA;    [Year],&#xA;    [IsWeekend],&#xA;    [IsLeapYear]&#xA;    )&#xA;    Values&#xA;    (&#xA;    @Date,&#xA;    CONVERT(varchar(10), @Date, 105), -- See links for 105 explanation&#xA;    Day(@Date),&#xA;    DATEPART(dy, @Date),&#xA;    DATEPART(dw, @Date),&#xA;    DATENAME(dw, @Date),&#xA;    DATEPART(wk, @Date),&#xA;    DATEPART(mm, @Date),&#xA;    DATENAME(mm, @Date),&#xA;    DATENAME(qq, @Date),&#xA;    Year(@Date),&#xA;    @IsWeekend,&#xA;    @IsLeapYear&#xA;    )&#xA;    END&#xA;    -- Goto next day&#xA;    Set @Date = dateadd(day,1,@Date )&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -7307,7 +7319,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}"
+          SQLTask:Connection="{0DBEE10A-FFC1-4BE5-B581-B3CA46CAA232}"
           SQLTask:SqlStatementSource="truncate table [dbo].[Transacciones];&#xA;delete from Tiempo;&#xA;delete from Clientes;&#xA;delete from Respuestas;&#xA;DBCC CHECKIDENT ('[Respuestas]', RESEED, 0);&#xA;delete from Canales;&#xA;delete from Operaciones;&#xA;DBCC CHECKIDENT ('[Operaciones]', RESEED, 0);&#xA;delete from Lugares_Transaccion" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -7383,35 +7395,35 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174.4,41.6"
+          Size="174,42"
           Id="Package\carga_dim_canales"
           TopLeft="71.6666671964857,306.200000041326" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\carga_dim_clientes"
           TopLeft="78,227" />
         <NodeLayout
-          Size="223.2,41.6"
+          Size="223,42"
           Id="Package\carga_dim_lugar_transaccion"
           TopLeft="517.476189514542,393.107843266547" />
         <NodeLayout
-          Size="196,41.6"
+          Size="196,42"
           Id="Package\carga_dim_operaciones"
           TopLeft="56.6666671964857,387.06666671488" />
         <NodeLayout
-          Size="183.2,41.6"
+          Size="183,42"
           Id="Package\carga_dim_respuestas"
           TopLeft="293.619048098858,390.070588337823" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\carga_dim_tiempo"
           TopLeft="76.5,141.5" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,42"
           Id="Package\Ejecutar Carga de Tabla de Hechos"
           TopLeft="514.523817850889,499.837251770942" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143,42"
           Id="Package\limpio_tablas"
           TopLeft="85.9285714528999,62.7352941069223" />
         <EdgeLayout
@@ -7577,15 +7589,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\carga_dim_canales\Data Conversion"
           TopLeft="280,187" />
         <NodeLayout
-          Size="119.2,41.6"
+          Size="119,42"
           Id="Package\carga_dim_canales\Canales"
           TopLeft="148,76" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\carga_dim_canales\DimCanales"
           TopLeft="484,282" />
         <EdgeLayout
@@ -7691,15 +7703,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\carga_dim_clientes\Flat File Destination"
           TopLeft="528,463" />
         <NodeLayout
-          Size="116,41.6"
+          Size="116,42"
           Id="Package\carga_dim_clientes\Clientes"
           TopLeft="271,216" />
         <NodeLayout
-          Size="137.6,42.4"
+          Size="138,42"
           Id="Package\carga_dim_clientes\DimClientes"
           TopLeft="385,354" />
         <EdgeLayout
@@ -7769,9 +7781,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
