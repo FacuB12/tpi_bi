@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="159"
-  DTS:VersionGUID="{BC36E0CC-20F7-4B85-8AEA-F767D52D45CA}">
+  DTS:VersionBuild="160"
+  DTS:VersionGUID="{9E8AD128-56B4-4697-9372-A73D513104A6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2921,7 +2921,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3621,7 +3621,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\lugar_transacciones_tpi.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\lugar_transacciones_tpi.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3692,7 +3692,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\operaciones\operaciones-v3.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\operaciones-v3.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3704,7 +3704,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\respuestas\respuestas - test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\respuestas_-_test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -4551,8 +4551,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_canales\DimCanales.Connections[OleDbConnection]"
-                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
-                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4704,8 +4704,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_clientes\Clientes.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[clientes-matching-quality]"
-                  connectionManagerRefId="Package.ConnectionManagers[clientes-matching-quality]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5574,8 +5574,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_lugar_transaccion\DimLugarTransaccion.Connections[OleDbConnection]"
-                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
-                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6105,8 +6105,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_operaciones\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
-                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6683,8 +6683,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_respuestas\DimRespuestas.Connections[OleDbConnection]"
-                  connectionManagerID="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
-                  connectionManagerRefId="{B8D919DC-C069-4D75-8CC7-9350C4C9577B}:invalid"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7817,17 +7817,17 @@
     design-time-name="Package\carga_dim_lugar_transaccion">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="179.2,41.6"
+          Size="179,42"
           Id="Package\carga_dim_lugar_transaccion\LugarTransacciones"
           TopLeft="266,45" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\carga_dim_lugar_transaccion\Data Conversion"
           TopLeft="367,197" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\carga_dim_lugar_transaccion\DimLugarTransaccion"
           TopLeft="706,293" />
         <EdgeLayout
@@ -7861,9 +7861,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7897,9 +7895,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7937,19 +7933,19 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\carga_dim_operaciones\OLE DB Destination"
           TopLeft="376.428577839112,373.176475821894" />
         <NodeLayout
-          Size="151.2,46.4"
+          Size="151,46"
           Id="Package\carga_dim_operaciones\TRIM Column"
           TopLeft="228.042857519948,258.29999963536" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\carga_dim_operaciones\Data Conversion"
           TopLeft="192.614286748244,161.829411421515" />
         <NodeLayout
-          Size="140.8,41.6"
+          Size="141,42"
           Id="Package\carga_dim_operaciones\Operaciones"
           TopLeft="290,41" />
         <EdgeLayout
@@ -8087,65 +8083,63 @@
     design-time-name="Package\carga_dim_respuestas">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="131.2,41.6"
+          Size="139,42"
           Id="Package\carga_dim_respuestas\Respuestas"
           TopLeft="249,83" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\carga_dim_respuestas\TRIM Column"
           TopLeft="444,267" />
         <NodeLayout
-          Size="117.6,41.6"
+          Size="118,42"
           Id="Package\carga_dim_respuestas\TRIM x3"
           TopLeft="611,449.6" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\carga_dim_respuestas\Data Conversion"
           TopLeft="342,187" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\carga_dim_respuestas\DimRespuestas"
           TopLeft="713,532" />
         <NodeLayout
-          Size="117.6,41.6"
+          Size="118,42"
           Id="Package\carga_dim_respuestas\TRIM x2"
           TopLeft="498,353.6" />
         <EdgeLayout
           Id="Package\carga_dim_respuestas.Paths[Excel Source Output]"
-          TopLeft="314.6,124.6">
+          TopLeft="318.5,125">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107.8,62.4"
+              EndConnector="104,62"
               Start="0,0"
-              End="107.8,54.9">
+              End="104,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.2" />
+                    End="0,27" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.2"
-                    Point2="0,31.2"
-                    Point3="4,31.2" />
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="4,31" />
                   <mssgle:LineSegment
-                    End="103.8,31.2" />
+                    End="100,31" />
                   <mssgle:CubicBezierSegment
-                    Point1="103.8,31.2"
-                    Point2="107.8,31.2"
-                    Point3="107.8,35.2" />
+                    Point1="100,31"
+                    Point2="104,31"
+                    Point3="104,35" />
                   <mssgle:LineSegment
-                    End="107.8,54.9" />
+                    End="104,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8179,9 +8173,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8215,9 +8207,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8251,9 +8241,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8287,9 +8275,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
