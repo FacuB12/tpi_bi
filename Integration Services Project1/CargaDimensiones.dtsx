@@ -6,13 +6,15 @@
   DTS:CreatorComputerName="WIN-IJ15L5HV6D9"
   DTS:CreatorName="WIN-IJ15L5HV6D9\Administrator"
   DTS:DTSID="{1AFA4DEC-FA72-40B1-B547-A130BCDD5292}"
+  DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="1033"
+  DTS:MaxErrorCount="5"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="160"
-  DTS:VersionGUID="{9E8AD128-56B4-4697-9372-A73D513104A6}">
+  DTS:VersionBuild="172"
+  DTS:VersionGUID="{842E608F-CA86-46DF-8AA5-AABC4D2C3C89}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,19 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\canales_v2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[clientes]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{C77A7B5E-EE89-4D4A-BE5B-8961A877D3FD}"
-      DTS:ObjectName="clientes">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\canales_v2_2003.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -61,7 +51,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\Clientes-Matching-v1.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test_2003.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -990,7 +980,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\Errores\errores_DIMcliente.csv">
+          DTS:ConnectionString="C:\Users\Usuario\Desktop\TP-BI\Errores\errores_DIMcliente.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -998,7 +988,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="id"
-              DTS:DTSID="{F0C92A74-0BE5-4D8A-93F5-584B27A0A893}"
+              DTS:DTSID="{A3D05ED3-9B2A-4313-9F13-D0CE251D8541}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1007,7 +997,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Nombre"
-              DTS:DTSID="{AEDE0E46-DCF2-45CE-BEC2-3324200A60CD}"
+              DTS:DTSID="{5546A3ED-ACDD-4712-98BB-0D5CC0C9C7A2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1016,7 +1006,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Apellido"
-              DTS:DTSID="{B8CD1536-9EBE-4DD2-B5FE-C7E297C1A06C}"
+              DTS:DTSID="{D68C02E2-0EED-4698-923F-2E366D3F5A60}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1024,7 +1014,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="id_sucursal"
-              DTS:DTSID="{89DA67B8-8574-463A-99CE-7FD952DB065E}"
+              DTS:DTSID="{AF252A0B-2CCD-4D3F-9313-010076C64BAC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1033,7 +1023,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Direccion"
-              DTS:DTSID="{086792F6-E14C-4B88-97A3-F0FDB2FB6704}"
+              DTS:DTSID="{01917C36-68BC-495B-B66B-EBE2AC129CB5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1042,7 +1032,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ciudad"
-              DTS:DTSID="{220E331A-236A-4DE1-9DCC-2515F10C931D}"
+              DTS:DTSID="{75A5C0BC-3443-4522-856F-390414ACB7CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1051,7 +1041,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="pais"
-              DTS:DTSID="{600A6D9E-D583-46B4-A2AA-276ABD302BA3}"
+              DTS:DTSID="{2E1920F4-059A-4436-BFE2-8A181010DFC5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1060,7 +1050,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="email"
-              DTS:DTSID="{D9885884-E573-41CE-90BE-0FEF657622FE}"
+              DTS:DTSID="{8B8E4407-5FEF-4E6D-9777-09F07CA9A234}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1068,7 +1058,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="fechanac"
-              DTS:DTSID="{348E81F2-AA06-4869-A8B9-30A77479680D}"
+              DTS:DTSID="{DE12BF9F-7797-4AAA-B4A8-9C8C3532094F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1077,7 +1067,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="genero"
-              DTS:DTSID="{D26A1159-E80D-4C60-96E2-A99166CE42C6}"
+              DTS:DTSID="{F665DF04-BDDE-4A0D-A4D9-C7099C4F4308}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1085,7 +1075,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="ingresos"
-              DTS:DTSID="{FF5B1C9F-976C-4B63-BDD1-B9DF349D6EF2}"
+              DTS:DTSID="{23B32E5F-6933-440C-97E1-7F4668DC2911}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1094,7 +1084,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="moneda"
-              DTS:DTSID="{0C87AD2D-A2C5-49A7-A134-81A384AA26AC}"
+              DTS:DTSID="{BF7DA819-588B-410D-8A80-97D90DC2C1BC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1102,7 +1092,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{97D8F55C-B9BF-435C-A4EC-E748B7AFF3FE}"
+              DTS:DTSID="{F9E1B88B-E3C7-4B1F-8368-387038AAFD99}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1110,7 +1100,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{B6E888A6-6069-4533-B7CD-4DF70D63B868}"
+              DTS:DTSID="{EBD3CA36-AC13-453F-8526-7D6FCE82BB54}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -3621,7 +3611,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\lugar_transacciones_tpi.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\lugar_transacciones_tpi_2003.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3672,18 +3662,6 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[operaciones-v2]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{B971DAC6-5C06-4B4A-9F07-376FCAA8E392}"
-      DTS:ObjectName="operaciones-v2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\operaciones_v2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[operaciones-v3]"
       DTS:CreationName="EXCEL"
       DTS:DTSID="{A0914451-9EB5-4F1A-879E-5BDA8402159D}"
@@ -3692,7 +3670,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\operaciones-v3.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\operaciones-v3_2003.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3704,19 +3682,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\respuestas_-_test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[respuestas-v4]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{E62FFCE8-4F4F-4482-970E-9C154051C60B}"
-      DTS:ObjectName="respuestas-v4">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2023\respuestas_v4.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\respuestas_-_test_2003.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -4677,7 +4643,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">'clientes-cleansing-v1-test$'</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4704,8 +4670,8 @@
               <connections>
                 <connection
                   refId="Package\carga_dim_clientes\Clientes.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[clientes_matching-v1]"
+                  connectionManagerRefId="Package.ConnectionManagers[clientes_matching-v1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6205,7 +6171,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Operaciones$</property>
+                  name="OpenRowset">Operaciones$DatosExternos_1</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -6245,33 +6211,33 @@
                     <outputColumn
                       refId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].Columns[ID_Operatoria]"
                       dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].ExternalColumns[ID_Operatoria]"
                       length="255"
                       lineageId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].Columns[ID_Operatoria]"
                       name="ID_Operatoria"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="IgnoreFailure" />
                     <outputColumn
                       refId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].Columns[ID_Operacion]"
                       dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].ExternalColumns[ID_Operacion]"
                       length="255"
                       lineageId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].Columns[ID_Operacion]"
                       name="ID_Operacion"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="IgnoreFailure" />
                     <outputColumn
                       refId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].Columns[Desc_Operacion]"
                       dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].ExternalColumns[Desc_Operacion]"
                       length="255"
                       lineageId="Package\carga_dim_operaciones\Operaciones.Outputs[Excel Source Output].Columns[Desc_Operacion]"
                       name="Desc_Operacion"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="IgnoreFailure" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6692,7 +6658,7 @@
                 <input
                   refId="Package\carga_dim_respuestas\DimRespuestas.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -6836,7 +6802,7 @@
                       refId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[ID_Operatoria]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].ExternalColumns[ID_Operatoria]"
                       length="255"
                       lineageId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[ID_Operatoria]"
@@ -6846,7 +6812,7 @@
                       refId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[ID_Respuesta]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].ExternalColumns[ID_Respuesta]"
                       length="255"
                       lineageId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[ID_Respuesta]"
@@ -6856,7 +6822,7 @@
                       refId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[Desc_Respuesta]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].ExternalColumns[Desc_Respuesta]"
                       length="255"
                       lineageId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[Desc_Respuesta]"
@@ -6866,12 +6832,12 @@
                       refId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[Desc_Respuesta_Larga]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].ExternalColumns[Desc_Respuesta_Larga]"
                       length="255"
                       lineageId="Package\carga_dim_respuestas\Respuestas.Outputs[Excel Source Output].Columns[Desc_Respuesta_Larga]"
                       name="Desc_Respuesta_Larga"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="IgnoreFailure" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -7374,12 +7340,12 @@
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\carga_dim_tiempo" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{837B532D-E7FF-4275-BF80-D55CCBD39282}"
+      DTS:DTSID="{B25B9DE5-D593-4F68-9A9A-747EB1806077}"
       DTS:From="Package\carga_dim_lugar_transaccion"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 6"
+      DTS:ObjectName="Constraint 7"
       DTS:To="Package\Ejecutar Carga de Tabla de Hechos" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -7399,7 +7365,7 @@
           Id="Package\carga_dim_canales"
           TopLeft="71.6666671964857,306.200000041326" />
         <NodeLayout
-          Size="168,42"
+          Size="182,42"
           Id="Package\carga_dim_clientes"
           TopLeft="78,227" />
         <NodeLayout
@@ -7428,18 +7394,18 @@
           TopLeft="85.9285714528999,62.7352941069223" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="161.65,183.1">
+          TopLeft="165.25,183.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.9"
+              EndConnector="0,43.5"
               Start="0,0"
-              End="0,36.4">
+              End="0,36">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.4" />
+                    End="0,36" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7450,18 +7416,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="160.433333598243,268.6">
+          TopLeft="169,269">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.600000041326"
+              EndConnector="-10.3333328035143,37.200000041326"
               Start="0,0"
-              End="0,30.100000041326">
+              End="-10.3333328035143,29.700000041326">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.100000041326" />
+                    End="0,14.600000020663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.600000020663"
+                    Point2="0,18.600000020663"
+                    Point3="-4,18.600000020663" />
+                  <mssgle:LineSegment
+                    End="-6.33333280351428,18.600000020663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.33333280351428,18.600000020663"
+                    Point2="-10.3333328035143,18.600000020663"
+                    Point3="-10.3333328035143,22.600000020663" />
+                  <mssgle:LineSegment
+                    End="-10.3333328035143,29.700000041326" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7516,18 +7494,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="476.819048098858,412.389215802185">
+          TopLeft="476.619048098858,412.589215802185">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.6571414156844,0"
+              EndConnector="40.8571414156841,0"
               Start="0,0"
-              End="33.1571414156844,0">
+              End="33.3571414156841,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="33.1571414156844,0" />
+                    End="33.3571414156841,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7559,19 +7537,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="632.800003682716,434.707843266547">
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="632.750003682715,435.107843266547">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.1294085043946"
+              EndConnector="0,64.729408504395"
               Start="0,0"
-              End="0,57.6294085043946">
+              End="0,57.229408504395">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.6294085043946" />
+                    End="0,57.229408504395" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7587,7 +7565,7 @@
     design-time-name="Package\carga_dim_canales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="161,42"
           Id="Package\carga_dim_canales\Data Conversion"
@@ -7631,7 +7609,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7665,7 +7645,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7707,7 +7689,7 @@
           Id="Package\carga_dim_clientes\Flat File Destination"
           TopLeft="528,463" />
         <NodeLayout
-          Size="116,42"
+          Size="147,42"
           Id="Package\carga_dim_clientes\Clientes"
           TopLeft="271,216" />
         <NodeLayout
@@ -7752,30 +7734,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\carga_dim_clientes.Paths[Excel Source Output]"
-          TopLeft="329,257.6">
+          TopLeft="344.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="124.8,96.4"
+              EndConnector="109.5,96"
               Start="0,0"
-              End="124.8,88.9">
+              End="109.5,88.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.2" />
+                    End="0,44" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.2"
-                    Point2="0,48.2"
-                    Point3="4,48.2" />
+                    Point1="0,44"
+                    Point2="0,48"
+                    Point3="4,48" />
                   <mssgle:LineSegment
-                    End="120.8,48.2" />
+                    End="105.5,48" />
                   <mssgle:CubicBezierSegment
-                    Point1="120.8,48.2"
-                    Point2="124.8,48.2"
-                    Point3="124.8,52.2" />
+                    Point1="105.5,48"
+                    Point2="109.5,48"
+                    Point3="109.5,52" />
                   <mssgle:LineSegment
-                    End="124.8,88.9" />
+                    End="109.5,88.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7817,7 +7799,7 @@
     design-time-name="Package\carga_dim_lugar_transaccion">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="179,42"
           Id="Package\carga_dim_lugar_transaccion\LugarTransacciones"
@@ -7829,39 +7811,41 @@
         <NodeLayout
           Size="187,42"
           Id="Package\carga_dim_lugar_transaccion\DimLugarTransaccion"
-          TopLeft="706,293" />
+          TopLeft="601,307" />
         <EdgeLayout
           Id="Package\carga_dim_lugar_transaccion.Paths[Data Conversion Output]"
           TopLeft="447.5,239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="352,54"
+              EndConnector="247,68"
               Start="0,0"
-              End="352,46.5">
+              End="247,60.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23" />
+                    End="0,30" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="4,27" />
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
                   <mssgle:LineSegment
-                    End="348,27" />
+                    End="243,34" />
                   <mssgle:CubicBezierSegment
-                    Point1="348,27"
-                    Point2="352,27"
-                    Point3="352,31" />
+                    Point1="243,34"
+                    Point2="247,34"
+                    Point3="247,38" />
                   <mssgle:LineSegment
-                    End="352,46.5" />
+                    End="247,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7895,7 +7879,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
