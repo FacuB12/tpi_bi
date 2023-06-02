@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{A324158E-4E93-4DA7-A836-78951D88E17A}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{B3D3A6E6-1013-4CDE-B1E5-B401BAF7F97D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3385,7 +3385,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID_Operatoria"
-              DTS:DTSID="{9E466C5C-E2D9-4F55-90DF-714AC52B2901}"
+              DTS:DTSID="{4F072100-7D6F-403F-8FD3-20365966EBE5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3394,7 +3394,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID_Canal"
-              DTS:DTSID="{14766296-B3BB-4B5C-BF33-E0A810E304C4}"
+              DTS:DTSID="{EF5433D4-D20F-4F4D-A8E8-B801999C4AA7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3403,7 +3403,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID_Operacion"
-              DTS:DTSID="{15FD4A56-6928-40E5-AFBA-FF2460FCE708}"
+              DTS:DTSID="{B3F1EA1C-2FF8-4AD5-AB4B-411EE55E2AD6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3412,7 +3412,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Fecha_operacion"
-              DTS:DTSID="{F8FDB31E-5D56-406E-A7F5-310C5340BD0C}"
+              DTS:DTSID="{765FC3C6-B086-42C6-8FAC-3C3643127855}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3421,7 +3421,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Tipo_Cuenta"
-              DTS:DTSID="{32240418-4EA4-4463-9FB9-F9ECCB783D61}"
+              DTS:DTSID="{83396F06-C9C5-43A5-92C9-4AC9881FA3B6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3430,7 +3430,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Cuenta"
-              DTS:DTSID="{CAB0FBCD-5599-4AE8-B491-A83CEC36F4BC}"
+              DTS:DTSID="{D67F2738-2C80-4104-9DB7-6334B8CE852A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3439,7 +3439,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Id_Cliente"
-              DTS:DTSID="{72CC9596-ED15-43DF-87A2-973BF7701596}"
+              DTS:DTSID="{B7E94123-A961-411D-8CF4-6DFA01512068}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3448,7 +3448,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Tipo_Cuenta"
-              DTS:DTSID="{37889832-7306-4432-8635-7C00F3F4C5AB}"
+              DTS:DTSID="{B4DE90F0-7050-46DD-8A1F-26D2FF2CDEF8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3457,7 +3457,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Cuenta"
-              DTS:DTSID="{B1408371-CC56-4905-B6EE-B062E7ABBB92}"
+              DTS:DTSID="{C0A4ABCA-09F1-405D-B946-F58E2652191D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3466,7 +3466,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Id_Cliente"
-              DTS:DTSID="{B4E62E70-9152-4C38-ABDE-7193E7A3EAC7}"
+              DTS:DTSID="{F08050ED-5F5A-450E-9889-404D9980BF22}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3475,7 +3475,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Comercio"
-              DTS:DTSID="{CA2DC9FC-61E0-465C-8F77-FD42536F1194}"
+              DTS:DTSID="{165354EE-B5E9-4A8F-B618-8D78783DB0AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3484,7 +3484,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Servicio"
-              DTS:DTSID="{7E00FF43-2602-4EFD-826D-ADFCBC9069C1}"
+              DTS:DTSID="{E3D4F123-9FB2-4770-8A82-352C83BFA082}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3493,7 +3493,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Concepto"
-              DTS:DTSID="{BC08B610-6243-4CB2-9A81-C63920E79D06}"
+              DTS:DTSID="{30D5E169-BDC6-4F90-BA2C-F4585B3D98C6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3502,7 +3502,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Tipo_tarjeta"
-              DTS:DTSID="{16F6C878-F5F5-4427-A02C-1EC7BE6F8FB5}"
+              DTS:DTSID="{11C23CBB-3F68-419D-986C-A3A347218A64}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3511,7 +3511,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Marca_Tarjeta"
-              DTS:DTSID="{B4BA2FA4-2B72-477E-AE38-EC273D5586E0}"
+              DTS:DTSID="{1F65BBD4-5ED0-47E5-9B19-B9876607290D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3520,7 +3520,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Nro_Tarjeta"
-              DTS:DTSID="{166DA510-2251-4868-847E-1D52AA72A5FA}"
+              DTS:DTSID="{D157ED9D-F6C5-48EE-AC11-60574BCB9342}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3529,7 +3529,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="terminal"
-              DTS:DTSID="{65C088B6-70B6-4A33-9A28-5F4A4308EAA4}"
+              DTS:DTSID="{17F10DD7-7FEB-4D65-95F3-E623F7F67079}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3538,7 +3538,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Comprobante"
-              DTS:DTSID="{D54E28E9-367C-4A2F-8EA2-63CCC5F02905}"
+              DTS:DTSID="{0A8F11E8-2CEC-43EC-A9C3-93CE80B5D26B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3547,7 +3547,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Pais"
-              DTS:DTSID="{3DEC8C90-F6F5-4916-95CB-BE28A7118F0E}"
+              DTS:DTSID="{23CBB7D0-C933-4C1C-89A0-C2B823748766}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3556,7 +3556,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Moneda"
-              DTS:DTSID="{675AB54D-10DB-4DE8-B5CD-C1B68BF3D6F1}"
+              DTS:DTSID="{1BEA1598-9DCE-443A-88D4-525EC7C5B035}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3565,7 +3565,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Origen_Monto"
-              DTS:DTSID="{2E249156-6F2F-4441-8662-783261DD3FBB}"
+              DTS:DTSID="{BFDE5684-11B4-4527-B31A-89F3DA4063CA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3574,7 +3574,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Moneda"
-              DTS:DTSID="{170170A0-2F92-4E03-9AA8-F3D7CD0FE6B0}"
+              DTS:DTSID="{B602148C-54E9-4E17-BBBB-F0054088CCCE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3583,7 +3583,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destino_Monto"
-              DTS:DTSID="{CC8078C5-90A2-49FC-B127-370D1C3AD83A}"
+              DTS:DTSID="{6BD07994-C656-4CCC-B434-B74F264EE4BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -3592,7 +3592,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cod_Respuesta"
-              DTS:DTSID="{7D445A83-9B72-4605-8E6E-D5377ED1CE82}"
+              DTS:DTSID="{FAE301CD-49D7-4906-9C10-6C7835A8935B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -11968,41 +11968,33 @@ where [refTable].[id_Cliente] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="183,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif"
-          TopLeft="190.967725229231,819.388380461318" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Tiempo"
-          TopLeft="595.967731388377,364.105469910753" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Respuesta"
-          TopLeft="914.467731388377,646.605469910754" />
+          Size="149,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes"
+          TopLeft="12.9677313883774,763.105469910754" />
         <NodeLayout
           Size="158,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Clientes"
           TopLeft="64.4677312890365,637.105469910754" />
         <NodeLayout
-          Size="204,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
-          TopLeft="597.967731388377,486.105469910753" />
+          Size="150,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Canales"
+          TopLeft="407.967728805509,775.5721368116" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Data Conversion"
+          TopLeft="59.0788424994885,560.105469910754" />
         <NodeLayout
           Size="149,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes"
-          TopLeft="12.9677313883774,763.105469910754" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones"
-          TopLeft="610.967731388377,646.105469910754" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\OLE DB Source"
-          TopLeft="53.0612253934232,139.949581409998" />
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Replace comas"
+          TopLeft="53.9682548873276,241.790848588815" />
         <NodeLayout
           Size="155,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\replace NULL x2"
           TopLeft="161.451249915031,460.867242476203" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo"
+          TopLeft="923.967731388377,369.105469910753" />
         <NodeLayout
           Size="173,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Clientes_unif"
@@ -12016,10 +12008,6 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\TRIM Columns"
           TopLeft="55.7006378403941,322.558460078051" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo"
-          TopLeft="923.967731388377,369.105469910753" />
-        <NodeLayout
           Size="162,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Respuesta"
           TopLeft="912.967731388377,739.105469910754" />
@@ -12028,239 +12016,53 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion"
           TopLeft="896.967731388377,486.105469910753" />
         <NodeLayout
-          Size="224,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
-          TopLeft="1395.79426057567,375.723249746156" />
+          Size="164,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\REPLACE_0to00"
+          TopLeft="46.3718828758763,510.468216067778" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Data Conversion"
-          TopLeft="59.0788424994885,560.105469910754" />
+          Size="171,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Respuesta"
+          TopLeft="914.467731388377,646.605469910754" />
         <NodeLayout
-          Size="149,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Replace comas"
-          TopLeft="53.9682548873276,241.790848588815" />
+          Size="150,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\OLE DB Source"
+          TopLeft="53.0612253934232,139.949581409998" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif"
+          TopLeft="190.967725229231,819.388380461318" />
         <NodeLayout
           Size="166,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Operaciones"
           TopLeft="617.967731388377,744.105469910754" />
         <NodeLayout
-          Size="164,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\REPLACE_0to00"
-          TopLeft="46.3718828758763,510.468216067778" />
+          Size="224,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones"
+          TopLeft="1395.79426057567,375.723249746156" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Canales"
-          TopLeft="407.967728805509,775.5721368116" />
+          Size="180,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones"
+          TopLeft="610.967731388377,646.105469910754" />
         <NodeLayout
           Size="138,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\replace_null"
           TopLeft="57.9488773196677,395.430230730118" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate"
-          TopLeft="1174.47793444475,371.584461492071" />
+          Size="204,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Lugar_Transaccion"
+          TopLeft="597.967731388377,486.105469910753" />
         <NodeLayout
           Size="154,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Canales"
           TopLeft="335.467731388377,644.605469910754" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output3]"
-          TopLeft="46.3718828758763,531.268216067778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.7069596236122,49.6372538429755"
-              Start="0,0"
-              End="5.20695962361216,49.6372538429755">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.5,0"
-                    Point2="-22.5,0"
-                    Point3="-22.5,4" />
-                  <mssgle:LineSegment
-                    End="-22.5,45.6372538429755" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.5,45.6372538429755"
-                    Point2="-22.5,49.6372538429755"
-                    Point3="-18.5,49.6372538429755" />
-                  <mssgle:LineSegment
-                    End="5.20695962361216,49.6372538429755" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output2]"
-          TopLeft="161.451249915031,481.667242476203">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.079367039155,28.8009735915754"
-              Start="0,0"
-              End="-33.079367039155,21.3009735915754">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-29.079367039155,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.079367039155,0"
-                    Point2="-33.079367039155,0"
-                    Point3="-33.079367039155,4" />
-                  <mssgle:LineSegment
-                    End="-33.079367039155,21.3009735915754" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
-          TopLeft="126.748877319668,437.030230730118">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="112.302372595363,23.8370117460851"
-              Start="0,0"
-              End="112.302372595363,16.3370117460851">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.91850587304253" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.91850587304253"
-                    Point2="0,11.9185058730425"
-                    Point3="4,11.9185058730425" />
-                  <mssgle:LineSegment
-                    End="108.302372595363,11.9185058730425" />
-                  <mssgle:CubicBezierSegment
-                    Point1="108.302372595363,11.9185058730425"
-                    Point2="112.302372595363,11.9185058730425"
-                    Point3="112.302372595363,15.9185058730425" />
-                  <mssgle:LineSegment
-                    End="112.302372595363,16.3370117460851" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
-          TopLeft="129.034446363861,283.390848588815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.1676114892359"
-              Start="0,0"
-              End="0,31.6676114892359">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.6676114892359" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Data Conversion Output]"
-          TopLeft="140.373286894262,601.705469910754">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.4"
-              Start="0,0"
-              End="0,27.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Data Conversion Error Output]"
-          TopLeft="215.078842499489,581.105469910754">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84.7321838348795,-21.887463669236"
-              Start="0,0"
-              End="77.2321838348795,-21.887463669236">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38.3660919174398,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.3660919174398,0"
-                    Point2="42.3660919174398,0"
-                    Point3="42.3660919174398,-4" />
-                  <mssgle:LineSegment
-                    End="42.3660919174398,-17.887463669236" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.3660919174398,-17.887463669236"
-                    Point2="42.3660919174398,-21.887463669236"
-                    Point3="46.3660919174398,-21.887463669236" />
-                  <mssgle:LineSegment
-                    End="77.2321838348795,-21.887463669236" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.7202948013102,1,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Aggregate Output 1]"
-          TopLeft="1304.07793444475,394.453855619114">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91.7163261309267,0"
-              Start="0,0"
-              End="84.2163261309267,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="84.2163261309267,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate"
+          TopLeft="1174.47793444475,371.584461492071" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Tiempo"
+          TopLeft="595.967731388377,364.105469910753" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[OLE DB Source Output]"
           TopLeft="128.114740140375,181.549581409998">
@@ -12689,11 +12491,232 @@ where [refTable].[id_Cliente] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output3]"
+          TopLeft="46.3718828758763,531.268216067778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.7069596236122,49.6372538429755"
+              Start="0,0"
+              End="5.20695962361216,49.6372538429755">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,45.6372538429755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,45.6372538429755"
+                    Point2="-22.5,49.6372538429755"
+                    Point3="-18.5,49.6372538429755" />
+                  <mssgle:LineSegment
+                    End="5.20695962361216,49.6372538429755" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output2]"
+          TopLeft="161.451249915031,481.667242476203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.079367039155,28.8009735915754"
+              Start="0,0"
+              End="-33.079367039155,21.3009735915754">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-29.079367039155,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.079367039155,0"
+                    Point2="-33.079367039155,0"
+                    Point3="-33.079367039155,4" />
+                  <mssgle:LineSegment
+                    End="-33.079367039155,21.3009735915754" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output1]"
+          TopLeft="126.748877319668,437.030230730118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.302372595363,23.8370117460851"
+              Start="0,0"
+              End="112.302372595363,16.3370117460851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.91850587304253" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.91850587304253"
+                    Point2="0,11.9185058730425"
+                    Point3="4,11.9185058730425" />
+                  <mssgle:LineSegment
+                    End="108.302372595363,11.9185058730425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.302372595363,11.9185058730425"
+                    Point2="112.302372595363,11.9185058730425"
+                    Point3="112.302372595363,15.9185058730425" />
+                  <mssgle:LineSegment
+                    End="112.302372595363,16.3370117460851" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Derived Column Output]"
+          TopLeft="129.034446363861,283.390848588815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.1676114892359"
+              Start="0,0"
+              End="0,31.6676114892359">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6676114892359" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Data Conversion Output]"
+          TopLeft="140.373286894262,601.705469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.4"
+              Start="0,0"
+              End="0,27.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Data Conversion Error Output]"
+          TopLeft="215.078842499489,581.105469910754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.7321838348795,-21.887463669236"
+              Start="0,0"
+              End="77.2321838348795,-21.887463669236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.3660919174398,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.3660919174398,0"
+                    Point2="42.3660919174398,0"
+                    Point3="42.3660919174398,-4" />
+                  <mssgle:LineSegment
+                    End="42.3660919174398,-17.887463669236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.3660919174398,-17.887463669236"
+                    Point2="42.3660919174398,-21.887463669236"
+                    Point3="46.3660919174398,-21.887463669236" />
+                  <mssgle:LineSegment
+                    End="77.2321838348795,-21.887463669236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.7202948013102,1,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones.Paths[Aggregate Output 1]"
+          TopLeft="1304.07793444475,394.453855619114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.7163261309267,0"
+              Start="0,0"
+              End="84.2163261309267,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.2163261309267,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif">
+    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Clientes">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[clients_lookup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12703,7 +12726,30 @@ where [refTable].[id_Cliente] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Clientes]</Value>
+          type="q3:string">[dbo].[Tiempo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Lugares_Transaccion]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12721,58 +12767,12 @@ where [refTable].[id_Cliente] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Respuestas]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Clientes">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
           type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[clients_lookup]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Operaciones]</Value>
+          type="q3:string">[dbo].[Respuestas]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12798,7 +12798,7 @@ where [refTable].[id_Cliente] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo">
+    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12808,35 +12808,12 @@ where [refTable].[id_Cliente] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Tiempo]</Value>
+          type="q3:string">[dbo].[Clientes]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Lugar Transaccion">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Lugares_Transaccion]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12853,6 +12830,29 @@ where [refTable].[id_Cliente] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Operaciones]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
