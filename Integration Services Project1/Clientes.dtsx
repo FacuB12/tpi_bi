@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Clientes"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{4158728D-6B00-4461-9E95-281EC251F16F}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{7ED5F0CE-F927-41FF-BC2A-230C54AEE643}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,19 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-ESRC2J8;Initial Catalog=clientes_scd;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Clientes-{ADC2CE3D-F00F-401F-B6C7-2194E37F0A2F}DESKTOP-ESRC2J8.clientes_scd;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-ESRC2J8.clientes_scd 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{AE30A777-B0F2-4060-9A57-D1239DEAA697}"
-      DTS:ObjectName="DESKTOP-ESRC2J8.clientes_scd 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-ESRC2J8;Initial Catalog=clientes_scd;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{AE30A777-B0F2-4060-9A57-D1239DEAA697}DESKTOP-ESRC2J8.clientes_scd;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-ESRC2J8;Initial Catalog=clientes_scd;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Clientes-{ADC2CE3D-F00F-401F-B6C7-2194E37F0A2F}DESKTOP-ESRC2J8.clientes_scd;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -807,8 +795,8 @@ where [refTable].[id_Cliente] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migrar Datos\Búsqueda.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.clientes_scd]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.clientes_scd]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
                   description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
                   name="OleDbConnection" />
               </connections>
@@ -1101,8 +1089,8 @@ where [refTable].[id_Cliente] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migrar Datos\clientes SCD.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.clientes_scd 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.clientes_scd 1]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.clientes_scd]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.clientes_scd]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -1115,32 +1103,12 @@ where [refTable].[id_Cliente] = ?</property>
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[Nombre]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Nombre"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[Nombre]" />
-                    <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[Apellido]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Apellido"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[Apellido]" />
-                    <inputColumn
                       refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[email]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="email"
                       externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[email]" />
-                    <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[fechanac]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="fechanac"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[fechaNac]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[fechanac]" />
                     <inputColumn
                       refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[genero]"
                       cachedDataType="wstr"
@@ -1149,47 +1117,28 @@ where [refTable].[id_Cliente] = ?</property>
                       externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[genero]"
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[genero]" />
                     <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[id]"
-                      cachedDataType="r8"
-                      cachedName="id"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_Cliente]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[id]" />
-                    <inputColumn
                       refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[id_sucursal]"
                       cachedDataType="r8"
                       cachedName="id_sucursal"
                       externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sucursal]"
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[id_sucursal]" />
-                    <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[Direccion]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Direccion"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[domicilio]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[Direccion]" />
-                    <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[ciudad]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ciudad"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_Ciudad]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[ciudad]" />
-                    <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[pais]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="pais"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_Pais]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[pais]" />
-                    <inputColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].Columns[FROM_Final]"
-                      cachedDataType="dbTime"
-                      cachedName="FROM_Final"
-                      externalMetadataColumnId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[FROM]"
-                      lineageId="Package\Migrar Datos\Columna derivada.Outputs[Salida de columna derivada].Columns[FROM_Final]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sucursal]"
+                      dataType="i4"
+                      name="id_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[genero]"
+                      dataType="wstr"
+                      length="255"
+                      name="genero" />
                     <externalMetadataColumn
                       refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_cli]"
                       dataType="i4"
@@ -1209,10 +1158,6 @@ where [refTable].[id_Cliente] = ?</property>
                       length="255"
                       name="apellido" />
                     <externalMetadataColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sucursal]"
-                      dataType="i4"
-                      name="id_sucursal" />
-                    <externalMetadataColumn
                       refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[domicilio]"
                       dataType="wstr"
                       length="255"
@@ -1228,19 +1173,9 @@ where [refTable].[id_Cliente] = ?</property>
                       length="255"
                       name="nombre_Pais" />
                     <externalMetadataColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
-                      dataType="wstr"
-                      length="255"
-                      name="email" />
-                    <externalMetadataColumn
                       refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[fechaNac]"
                       dataType="dbDate"
                       name="fechaNac" />
-                    <externalMetadataColumn
-                      refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[genero]"
-                      dataType="wstr"
-                      length="255"
-                      name="genero" />
                     <externalMetadataColumn
                       refId="Package\Migrar Datos\clientes SCD.Inputs[Entrada de destino de OLE DB].ExternalColumns[FROM]"
                       dataType="dbDate"
@@ -1585,16 +1520,6 @@ where [refTable].[id_Cliente] = ?</property>
                       name="fechanac"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[START_DATE]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].ExternalColumns[START_DATE]"
-                      length="255"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[START_DATE]"
-                      name="START_DATE"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[genero]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
@@ -1603,6 +1528,26 @@ where [refTable].[id_Cliente] = ?</property>
                       length="255"
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[genero]"
                       name="genero"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[CP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].ExternalColumns[CP]"
+                      length="255"
+                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[CP]"
+                      name="CP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[START_DATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].ExternalColumns[START_DATE]"
+                      length="255"
+                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[START_DATE]"
+                      name="START_DATE"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1650,14 +1595,20 @@ where [refTable].[id_Cliente] = ?</property>
                       dataType="dbTimeStamp"
                       name="fechanac" />
                     <externalMetadataColumn
-                      refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].ExternalColumns[START_DATE]"
-                      dataType="dbDate"
-                      name="START_DATE" />
-                    <externalMetadataColumn
                       refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].ExternalColumns[genero]"
                       dataType="wstr"
                       length="255"
                       name="genero" />
+                    <externalMetadataColumn
+                      refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].ExternalColumns[CP]"
+                      dataType="wstr"
+                      length="255"
+                      name="CP" />
+                    <externalMetadataColumn
+                      refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].ExternalColumns[START_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="START_DATE" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1694,6 +1645,12 @@ where [refTable].[id_Cliente] = ?</property>
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de error de origen de OLE DB].Columns[Direccion]"
                       name="Direccion" />
                     <outputColumn
+                      refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de error de origen de OLE DB].Columns[CP]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de error de origen de OLE DB].Columns[CP]"
+                      name="CP" />
+                    <outputColumn
                       refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de error de origen de OLE DB].Columns[ciudad]"
                       dataType="wstr"
                       length="255"
@@ -1724,7 +1681,8 @@ where [refTable].[id_Cliente] = ?</property>
                       name="genero" />
                     <outputColumn
                       refId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de error de origen de OLE DB].Columns[START_DATE]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de error de origen de OLE DB].Columns[START_DATE]"
                       name="START_DATE" />
                     <outputColumn
@@ -2053,18 +2011,18 @@ where [refTable].[id_Cliente] = ?</property>
                       externalMetadataColumnId="Package\Migrar Datos\Nuevos Registros (DimClientes).Inputs[Entrada de destino de OLE DB].ExternalColumns[fechaNac]"
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[fechanac]" />
                     <inputColumn
+                      refId="Package\Migrar Datos\Nuevos Registros (DimClientes).Inputs[Entrada de destino de OLE DB].Columns[id]"
+                      cachedDataType="r8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Migrar Datos\Nuevos Registros (DimClientes).Inputs[Entrada de destino de OLE DB].ExternalColumns[id_Cliente]"
+                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                    <inputColumn
                       refId="Package\Migrar Datos\Nuevos Registros (DimClientes).Inputs[Entrada de destino de OLE DB].Columns[START_DATE]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="START_DATE"
                       externalMetadataColumnId="Package\Migrar Datos\Nuevos Registros (DimClientes).Inputs[Entrada de destino de OLE DB].ExternalColumns[FROM]"
                       lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[START_DATE]" />
-                    <inputColumn
-                      refId="Package\Migrar Datos\Nuevos Registros (DimClientes).Inputs[Entrada de destino de OLE DB].Columns[id]"
-                      cachedDataType="r8"
-                      cachedName="id"
-                      externalMetadataColumnId="Package\Migrar Datos\Nuevos Registros (DimClientes).Inputs[Entrada de destino de OLE DB].ExternalColumns[id_Cliente]"
-                      lineageId="Package\Migrar Datos\DB Staging Clientes.Outputs[Salida de origen de OLE DB].Columns[id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2231,6 +2189,14 @@ where [refTable].[id_Cliente] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="160,42"
+          Id="Package\Actualizar Fechas"
+          TopLeft="85,225" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\carga_scd_tipo_2"
+          TopLeft="88,300" />
+        <NodeLayout
           Size="223,42"
           Id="Package\Cargar Staging Tablas Clientes"
           TopLeft="60,60" />
@@ -2238,14 +2204,6 @@ where [refTable].[id_Cliente] = ?</property>
           Size="139,42"
           Id="Package\Migrar Datos"
           TopLeft="99,153" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\carga_scd_tipo_2"
-          TopLeft="88,300" />
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Actualizar Fechas"
-          TopLeft="85,225" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="170,102">
@@ -2316,30 +2274,184 @@ where [refTable].[id_Cliente] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\carga_scd_tipo_2">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\carga_scd_tipo_2\Clientes SCD Tipo 2"
+          TopLeft="206,76" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\carga_scd_tipo_2\DimClientes"
+          TopLeft="221,195" />
+        <EdgeLayout
+          Id="Package\carga_scd_tipo_2.Paths[Salida de origen de OLE DB]"
+          TopLeft="290,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\carga_scd_tipo_2\Clientes SCD Tipo 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\carga_scd_tipo_2\DimClientes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Migrar Datos">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="137,42"
+          Id="Package\Migrar Datos\clientes SCD"
+          TopLeft="659,442" />
+        <NodeLayout
           Size="175,42"
           Id="Package\Migrar Datos\Conversión de datos"
           TopLeft="278,153" />
-        <NodeLayout
-          Size="227,42"
-          Id="Package\Migrar Datos\Nuevos Registros (DimClientes)"
-          TopLeft="116,447" />
-        <NodeLayout
-          Size="125,42"
-          Id="Package\Migrar Datos\Búsqueda"
-          TopLeft="298,242" />
         <NodeLayout
           Size="171,42"
           Id="Package\Migrar Datos\División condicional"
           TopLeft="278,336" />
         <NodeLayout
+          Size="227,42"
+          Id="Package\Migrar Datos\Nuevos Registros (DimClientes)"
+          TopLeft="116,447" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Migrar Datos\DB Staging Clientes"
           TopLeft="284,72" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Migrar Datos\Columna derivada"
+          TopLeft="404,443" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Migrar Datos\Búsqueda"
+          TopLeft="298,242" />
+        <EdgeLayout
+          Id="Package\Migrar Datos.Paths[SCD Tipo 2]"
+          TopLeft="390.666666666667,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.3333333333334,65"
+              Start="0,0"
+              End="95.3333333333334,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.3615295480881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.3615295480881"
+                    Point2="0,26.3615295480881"
+                    Point3="4,26.3615295480881" />
+                  <mssgle:LineSegment
+                    End="91.3333333333334,26.3615295480881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.3333333333334,26.3615295480881"
+                    Point2="95.3333333333334,26.3615295480881"
+                    Point3="95.3333333333334,30.3615295480881" />
+                  <mssgle:LineSegment
+                    End="95.3333333333334,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.4898893229167,31.3615295480881,50.3535546875,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migrar Datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="367.5,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migrar Datos.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="362,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.8190234375,16.15234375,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Migrar Datos.Paths[Salida de conversión de datos]"
           TopLeft="363,195">
@@ -2363,19 +2475,19 @@ where [refTable].[id_Cliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migrar Datos.Paths[Salida de origen de OLE DB]"
-          TopLeft="367.5,114">
+          Id="Package\Migrar Datos.Paths[Salida de columna derivada]"
+          TopLeft="568,463.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="91,0"
               Start="0,0"
-              End="0,31.5">
+              End="83.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="83.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2420,101 +2532,37 @@ where [refTable].[id_Cliente] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migrar Datos.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="362,284">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-99.8190234375,16.15234375,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="137,42"
-          Id="Package\Migrar Datos\clientes SCD"
-          TopLeft="659,442" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Migrar Datos\Columna derivada"
-          TopLeft="404,443" />
-        <EdgeLayout
-          Id="Package\Migrar Datos.Paths[Salida de columna derivada]"
-          TopLeft="568,463.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91,0"
-              Start="0,0"
-              End="83.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="83.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migrar Datos.Paths[SCD Tipo 2]"
-          TopLeft="390.666666666667,378">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.3333333333334,65"
-              Start="0,0"
-              End="95.3333333333334,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.3615295480881" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.3615295480881"
-                    Point2="0,26.3615295480881"
-                    Point3="4,26.3615295480881" />
-                  <mssgle:LineSegment
-                    End="91.3333333333334,26.3615295480881" />
-                  <mssgle:CubicBezierSegment
-                    Point1="91.3333333333334,26.3615295480881"
-                    Point2="95.3333333333334,26.3615295480881"
-                    Point3="95.3333333333334,30.3615295480881" />
-                  <mssgle:LineSegment
-                    End="95.3333333333334,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.4898893229167,31.3615295480881,50.3535546875,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Migrar Datos\clientes SCD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migrar Datos\Nuevos Registros (DimClientes)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migrar Datos\DB Staging Clientes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2546,96 +2594,6 @@ where [refTable].[id_Cliente] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migrar Datos\DB Staging Clientes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\carga_scd_tipo_2">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="134,42"
-          Id="Package\carga_scd_tipo_2\DimClientes"
-          TopLeft="221,195" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\carga_scd_tipo_2\Clientes SCD Tipo 2"
-          TopLeft="206,76" />
-        <EdgeLayout
-          Id="Package\carga_scd_tipo_2.Paths[Salida de origen de OLE DB]"
-          TopLeft="290,118">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77"
-              Start="0,0"
-              End="0,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\carga_scd_tipo_2\DimClientes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\carga_scd_tipo_2\Clientes SCD Tipo 2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migrar Datos\clientes SCD">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
