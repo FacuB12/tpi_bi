@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-ESRC2J8.DMSDB"
+  DTS:DTSID="{C233C9DA-4DF8-47A2-87D6-41E89DCD05BC}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-ESRC2J8;Initial Catalog=DMSDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-tpi_bi-{C233C9DA-4DF8-47A2-87D6-41E89DCD05BC}DESKTOP-ESRC2J8.DMSDB;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

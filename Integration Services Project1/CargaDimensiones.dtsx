@@ -13,8 +13,8 @@
   DTS:MaxErrorCount="5"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="176"
-  DTS:VersionGUID="{277B769C-2EC9-4AED-BF84-8CF20A8D1147}">
+  DTS:VersionBuild="184"
+  DTS:VersionGUID="{239DD81C-CBFA-4B93-B80E-AB064626A29F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\canales_v2.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\canales_v2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -51,7 +51,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing-v1-test.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\clientes-cleansing.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3611,7 +3611,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\lugar_transacciones_tpi.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\lugar_transacciones_tpi.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3670,7 +3670,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\operaciones-v3.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\operaciones-v3.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3682,7 +3682,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\respuestas_-_test.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Usuario\Desktop\TP-BI\Sources\2023\respuestas_-_test.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -4778,25 +4778,6 @@
                       name="genero"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[ingresos]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[ingresos]"
-                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[ingresos]"
-                      name="ingresos"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[moneda]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[moneda]"
-                      length="255"
-                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[moneda]"
-                      name="moneda"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[CP]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -4809,12 +4790,31 @@
                     <outputColumn
                       refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[titulo_trabajo]"
                       dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[titulo_trabajo]"
                       length="255"
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[titulo_trabajo]"
                       name="titulo_trabajo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[ingresos]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[ingresos]"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[ingresos]"
+                      name="ingresos"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[moneda]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[moneda]"
+                      length="255"
+                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[moneda]"
+                      name="moneda"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -4867,15 +4867,6 @@
                       length="255"
                       name="genero" />
                     <externalMetadataColumn
-                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[ingresos]"
-                      dataType="r8"
-                      name="ingresos" />
-                    <externalMetadataColumn
-                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[moneda]"
-                      dataType="wstr"
-                      length="255"
-                      name="moneda" />
-                    <externalMetadataColumn
                       refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[CP]"
                       dataType="wstr"
                       length="255"
@@ -4885,6 +4876,15 @@
                       dataType="wstr"
                       length="255"
                       name="titulo_trabajo" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[ingresos]"
+                      dataType="r8"
+                      name="ingresos" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].ExternalColumns[moneda]"
+                      dataType="wstr"
+                      length="255"
+                      name="moneda" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4982,6 +4982,79 @@
                       refId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\carga_dim_clientes\Columna derivada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\carga_dim_clientes\Columna derivada.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\carga_dim_clientes\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[FROM]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[FROM]"
+                      name="FROM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_DBDATE)[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\carga_dim_clientes\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -5128,6 +5201,12 @@
                       cachedName="id"
                       externalMetadataColumnId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input].ExternalColumns[id_Cliente]"
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input].Columns[FROM]"
+                      cachedDataType="dbDate"
+                      cachedName="FROM"
+                      externalMetadataColumnId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input].ExternalColumns[FROM]"
+                      lineageId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[FROM]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5178,6 +5257,18 @@
                       dataType="wstr"
                       length="255"
                       name="genero" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input].ExternalColumns[id_cli]"
+                      dataType="i4"
+                      name="id_cli" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input].ExternalColumns[FROM]"
+                      dataType="dbDate"
+                      name="FROM" />
+                    <externalMetadataColumn
+                      refId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input].ExternalColumns[TO]"
+                      dataType="dbDate"
+                      name="TO" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5310,19 +5401,6 @@
                       externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[genero]"
                       lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[genero]" />
                     <inputColumn
-                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[ingresos]"
-                      cachedDataType="r8"
-                      cachedName="ingresos"
-                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ingresos]"
-                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[ingresos]" />
-                    <inputColumn
-                      refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[moneda]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="moneda"
-                      externalMetadataColumnId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[moneda]"
-                      lineageId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output].Columns[moneda]" />
-                    <inputColumn
                       refId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
@@ -5409,7 +5487,7 @@
           <paths>
             <path
               refId="Package\carga_dim_clientes.Paths[Excel Source Output]"
-              endId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input]"
+              endId="Package\carga_dim_clientes\Columna derivada.Inputs[Entrada de columna derivada]"
               name="Excel Source Output"
               startId="Package\carga_dim_clientes\Clientes.Outputs[Excel Source Output]" />
             <path
@@ -5417,6 +5495,11 @@
               endId="Package\carga_dim_clientes\Flat File Destination.Inputs[Flat File Destination Input]"
               name="OLE DB Destination Error Output"
               startId="Package\carga_dim_clientes\DimClientes.Outputs[OLE DB Destination Error Output]" />
+            <path
+              refId="Package\carga_dim_clientes.Paths[Salida de columna derivada]"
+              endId="Package\carga_dim_clientes\DimClientes.Inputs[OLE DB Destination Input]"
+              name="Salida de columna derivada"
+              startId="Package\carga_dim_clientes\Columna derivada.Outputs[Salida de columna derivada]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -7671,77 +7754,115 @@
         <NodeLayout
           Size="170,42"
           Id="Package\carga_dim_clientes\Flat File Destination"
-          TopLeft="528,463" />
+          TopLeft="528,462" />
         <NodeLayout
           Size="147,42"
           Id="Package\carga_dim_clientes\Clientes"
-          TopLeft="271,216" />
+          TopLeft="229,84" />
         <NodeLayout
           Size="138,42"
           Id="Package\carga_dim_clientes\DimClientes"
-          TopLeft="385,354" />
+          TopLeft="373,294" />
         <EdgeLayout
           Id="Package\carga_dim_clientes.Paths[OLE DB Destination Error Output]"
-          TopLeft="453.8,396.4">
+          TopLeft="442,336">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="159.4,66.6000000000001"
+              EndConnector="171,126"
               Start="0,0"
-              End="159.4,59.1000000000001">
+              End="171,118.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.3000000000001" />
+                    End="0,59" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.3000000000001"
-                    Point2="0,33.3000000000001"
-                    Point3="4,33.3000000000001" />
+                    Point1="0,59"
+                    Point2="0,63"
+                    Point3="4,63" />
                   <mssgle:LineSegment
-                    End="155.4,33.3000000000001" />
+                    End="167,63" />
                   <mssgle:CubicBezierSegment
-                    Point1="155.4,33.3000000000001"
-                    Point2="159.4,33.3000000000001"
-                    Point3="159.4,37.3000000000001" />
+                    Point1="167,63"
+                    Point2="171,63"
+                    Point3="171,67" />
                   <mssgle:LineSegment
-                    End="159.4,59.1000000000001" />
+                    End="171,118.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.49109374999999,38.3000000000001,146.4178125,11.43359375"
+              BoundingBox="12.29109375,68,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\carga_dim_clientes\Columna derivada"
+          TopLeft="323,187" />
         <EdgeLayout
           Id="Package\carga_dim_clientes.Paths[Excel Source Output]"
-          TopLeft="344.5,258">
+          TopLeft="302.5,126">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.5,96"
+              EndConnector="102.5,61"
               Start="0,0"
-              End="109.5,88.5">
+              End="102.5,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44" />
+                    End="0,26.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44"
-                    Point2="0,48"
-                    Point3="4,48" />
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
                   <mssgle:LineSegment
-                    End="105.5,48" />
+                    End="98.5,30.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="105.5,48"
-                    Point2="109.5,48"
-                    Point3="109.5,52" />
+                    Point1="98.5,30.5"
+                    Point2="102.5,30.5"
+                    Point3="102.5,34.5" />
                   <mssgle:LineSegment
-                    End="109.5,88.5" />
+                    End="102.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_dim_clientes.Paths[Salida de columna derivada]"
+          TopLeft="405,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37,65"
+              Start="0,0"
+              End="37,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="33,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33,32.5"
+                    Point2="37,32.5"
+                    Point3="37,36.5" />
+                  <mssgle:LineSegment
+                    End="37,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7783,7 +7904,7 @@
     design-time-name="Package\carga_dim_lugar_transaccion">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="179,42"
           Id="Package\carga_dim_lugar_transaccion\LugarTransacciones"
@@ -7827,7 +7948,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7861,7 +7984,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7897,7 +8022,7 @@
     design-time-name="Package\carga_dim_operaciones">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170,42"
           Id="Package\carga_dim_operaciones\OLE DB Destination"
@@ -7945,7 +8070,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7979,7 +8106,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8013,7 +8142,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8049,7 +8180,7 @@
     design-time-name="Package\carga_dim_respuestas">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="139,42"
           Id="Package\carga_dim_respuestas\Respuestas"
@@ -8105,7 +8236,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8139,7 +8272,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8173,7 +8308,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8207,7 +8344,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8241,7 +8380,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

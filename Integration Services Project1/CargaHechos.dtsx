@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{B3D3A6E6-1013-4CDE-B1E5-B401BAF7F97D}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{96A8D729-CC4D-4B6A-8469-4DB70DE51CCA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5152,11 +5152,6 @@
                           cachedName="Dateid"
                           lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Tiempo.Outputs[Lookup Match Output].Columns[Dateid]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Inputs[Aggregate Input 1].Columns[id_Cliente]"
-                          cachedDataType="i4"
-                          cachedName="id_Cliente"
-                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]" />
-                        <inputColumn
                           refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Inputs[Aggregate Input 1].Columns[id_Res_Op]"
                           cachedDataType="i4"
                           cachedName="id_Res_Op"
@@ -5166,6 +5161,11 @@
                           cachedDataType="i4"
                           cachedName="id_Op_Op"
                           lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Match Output].Columns[id_Op_Op]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Inputs[Aggregate Input 1].Columns[id_cli]"
+                          cachedDataType="i4"
+                          cachedName="id_cli"
+                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_cli]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -5344,32 +5344,6 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_Cliente]"
-                          dataType="i4"
-                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_Cliente]"
-                          name="id_Cliente">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the ID of the input column used in the aggregation."
-                              name="AggregationColumnId">#{Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]}</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the type of aggregation."
-                              name="AggregationType"
-                              typeConverter="AggregationType">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
-                              name="IsBig">1</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the string comparison options."
-                              name="AggregationComparisonFlags">0</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_Tiempo]"
                           dataType="i4"
                           lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_Tiempo]"
@@ -5432,6 +5406,32 @@
                               dataType="System.Int32"
                               description="Especifica el id. de la columna de entrada usada en la agregación."
                               name="AggregationColumnId">#{Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Operaciones.Outputs[Lookup Match Output].Columns[id_Op_Op]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el tipo de agregación."
+                              name="AggregationType"
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                              name="IsBig">1</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación de cadenas."
+                              name="AggregationComparisonFlags">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_cli]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_cli]"
+                          name="id_cli">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el id. de la columna de entrada usada en la agregación."
+                              name="AggregationColumnId">#{Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_cli]}</property>
                             <property
                               dataType="System.Int32"
                               description="Especifica el tipo de agregación."
@@ -10124,13 +10124,19 @@ where [refTable].[Date] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Clientes]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [id_cli], [id_Cliente]
+FROM [tpi_bi].[dbo].[Clientes]
+  
+WHERE [TO] IS NULL</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Clientes]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [id_cli], [id_Cliente]
+FROM [tpi_bi].[dbo].[Clientes]
+  
+WHERE [TO] IS NULL) [refTable]
 where [refTable].[id_Cliente] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -10162,7 +10168,7 @@ where [refTable].[id_Cliente] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id_Cliente" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="apellido" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_sucursal" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="domicilio" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre_Ciudad" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre_Pais" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="email" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="fechaNac" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="genero" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id_cli" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_Cliente" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -10198,11 +10204,11 @@ where [refTable].[id_Cliente] = ?</property>
                           <properties>
                             <property
                               dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
+                              description="Especifica la columna de la tabla de referencia con la que se combina una columna."
                               name="JoinToReferenceColumn">id_Cliente</property>
                             <property
                               dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
                               name="CopyFromReferenceColumn" />
                           </properties>
                         </inputColumn>
@@ -10220,17 +10226,17 @@ where [refTable].[id_Cliente] = ?</property>
                       synchronousInputId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]"
+                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_cli]"
                           dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_Cliente]"
-                          name="id_Cliente"
-                          truncationRowDisposition="RedirectRow">
+                          errorOrTruncationOperation="Copiar columna"
+                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup_clientes_unif.Outputs[Lookup Match Output].Columns[id_cli]"
+                          name="id_cli"
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">id_Cliente</property>
+                              description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                              name="CopyFromReferenceColumn">id_cli</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -11415,12 +11421,6 @@ where [refTable].[id_Cliente] = ?</property>
                           externalMetadataColumnId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones.Inputs[OLE DB Destination Input].ExternalColumns[id_Canal]"
                           lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_Canal]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones.Inputs[OLE DB Destination Input].Columns[id_Cliente]"
-                          cachedDataType="i4"
-                          cachedName="id_Cliente"
-                          externalMetadataColumnId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones.Inputs[OLE DB Destination Input].ExternalColumns[id_Cliente]"
-                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_Cliente]" />
-                        <inputColumn
                           refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones.Inputs[OLE DB Destination Input].Columns[id_Res_Op]"
                           cachedDataType="i4"
                           cachedName="id_Res_Op"
@@ -11438,6 +11438,12 @@ where [refTable].[id_Cliente] = ?</property>
                           cachedName="id_Op_Op"
                           externalMetadataColumnId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones.Inputs[OLE DB Destination Input].ExternalColumns[id_Op_Op]"
                           lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_Op_Op]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones.Inputs[OLE DB Destination Input].Columns[id_cli]"
+                          cachedDataType="i4"
+                          cachedName="id_cli"
+                          externalMetadataColumnId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\tabla_Hechos_Transacciones.Inputs[OLE DB Destination Input].ExternalColumns[id_Cliente]"
+                          lineageId="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate.Outputs[Aggregate Output 1].Columns[id_cli]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -11839,23 +11845,23 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container"
           TopLeft="290.000003916877,313.117650608703" />
         <NodeLayout
-          Size="177,42"
+          Size="173,42"
           Id="Package\Limpio tabla hechos"
           TopLeft="315.000004342625,67.4235261836267" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="406.028575795525,109.023526183627">
+          TopLeft="405.178575795524,109.423526183627">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.6352953831628"
+              EndConnector="0,48.2352953831623"
               Start="0,0"
-              End="0,41.1352953831628">
+              End="0,40.7352953831623">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.1352953831628" />
+                    End="0,40.7352953831623" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11866,18 +11872,18 @@ where [refTable].[id_Cliente] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="410.600004427774,199.258821566789">
+          TopLeft="410.750004427774,199.658821566789">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.282353949299"
+              EndConnector="0,29.882353949299"
               Start="0,0"
-              End="0,22.782353949299">
+              End="0,22.382353949299">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.782353949299" />
+                    End="0,22.382353949299" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12004,10 +12010,6 @@ where [refTable].[id_Cliente] = ?</property>
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\error_convertion"
           TopLeft="299.811026334368,538.218006241518" />
         <NodeLayout
-          Size="148,42"
-          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\TRIM Columns"
-          TopLeft="55.7006378403941,322.558460078051" />
-        <NodeLayout
           Size="162,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Error_Respuesta"
           TopLeft="912.967731388377,739.105469910754" />
@@ -12055,6 +12057,10 @@ where [refTable].[id_Cliente] = ?</property>
           Size="154,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Lookup Canales"
           TopLeft="335.467731388377,644.605469910754" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\TRIM Columns"
+          TopLeft="55.7006378403941,322.558460078051" />
         <NodeLayout
           Size="130,42"
           Id="Package\Foreach Loop Container\carga_tabla_hechos_transacciones\Aggregate"
@@ -12708,7 +12714,7 @@ where [refTable].[id_Cliente] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12808,12 +12814,12 @@ where [refTable].[id_Cliente] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Clientes]</Value>
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
