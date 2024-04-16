@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{3A377FDC-D437-48B0-8709-BD41AB866797}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{463E6EA7-6DD0-485C-8F71-52A8D65C84E2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1904,70 +1904,38 @@ WHERE [LastChgDateTime] &gt;= DATEADD(minute, -10, GETDATE())</property>
         <NodeLayout
           Size="134,42"
           Id="Package\SCD_CLIENTES\DimClientes"
-          TopLeft="218.5,707.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\SCD_CLIENTES\Conversión de datos"
-          TopLeft="194,107.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\SCD_CLIENTES\VW_CLIENTES_MDS"
-          TopLeft="194,5.5" />
-        <EdgeLayout
-          Id="Package\SCD_CLIENTES.Paths[Salida de origen de OLE DB]"
-          TopLeft="281.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="215,42"
-          Id="Package\SCD_CLIENTES\Dimensión de variación lenta"
-          TopLeft="174,209.5" />
-        <EdgeLayout
-          Id="Package\SCD_CLIENTES.Paths[Salida de conversión de datos]"
-          TopLeft="281.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="218.5,713.5" />
         <NodeLayout
           Size="164,42"
           Id="Package\SCD_CLIENTES\Columna derivada"
-          TopLeft="56.5000000000001,311.5" />
+          TopLeft="56.5000000000001,317.5" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\SCD_CLIENTES\Columna derivada 1"
+          TopLeft="195,623.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\SCD_CLIENTES\VW_CLIENTES_MDS"
+          TopLeft="194,11.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\SCD_CLIENTES\Dimensión de variación lenta"
+          TopLeft="174,215.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\SCD_CLIENTES\Comando de OLE DB"
+          TopLeft="43.0000000000001,419.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\SCD_CLIENTES\Conversión de datos"
+          TopLeft="194,113.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\SCD_CLIENTES\Unión de todo"
+          TopLeft="209,521.5" />
         <EdgeLayout
           Id="Package\SCD_CLIENTES.Paths[Salida de inserciones de atributos históricos]"
-          TopLeft="247,251.5">
+          TopLeft="247,257.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2001,13 +1969,9 @@ WHERE [LastChgDateTime] &gt;= DATEADD(minute, -10, GETDATE())</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\SCD_CLIENTES\Comando de OLE DB"
-          TopLeft="43.0000000000001,413.5" />
         <EdgeLayout
-          Id="Package\SCD_CLIENTES.Paths[Salida de columna derivada]"
-          TopLeft="135,353.5">
+          Id="Package\SCD_CLIENTES.Paths[Salida de conversión de datos]"
+          TopLeft="281.5,155.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2027,13 +1991,87 @@ WHERE [LastChgDateTime] &gt;= DATEADD(minute, -10, GETDATE())</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="145,42"
-          Id="Package\SCD_CLIENTES\Unión de todo"
-          TopLeft="209,515.5" />
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de comando de OLE DB]"
+          TopLeft="131.5,461.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.166666666667,60"
+              Start="0,0"
+              End="127.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6070941336971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.6070941336971"
+                    Point2="0,35.6070941336971"
+                    Point3="4,35.6070941336971" />
+                  <mssgle:LineSegment
+                    End="123.166666666667,35.6070941336971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.166666666667,35.6070941336971"
+                    Point2="127.166666666667,35.6070941336971"
+                    Point3="127.166666666667,39.6070941336971" />
+                  <mssgle:LineSegment
+                    End="127.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de columna derivada1]"
+          TopLeft="283.5,665.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de columna derivada]"
+          TopLeft="135,359.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SCD_CLIENTES.Paths[Nueva salida]"
-          TopLeft="316,251.5">
+          TopLeft="316,257.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2068,46 +2106,8 @@ WHERE [LastChgDateTime] &gt;= DATEADD(minute, -10, GETDATE())</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SCD_CLIENTES.Paths[Salida de comando de OLE DB]"
-          TopLeft="131.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="127.166666666667,60"
-              Start="0,0"
-              End="127.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.6070941336971" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.6070941336971"
-                    Point2="0,35.6070941336971"
-                    Point3="4,35.6070941336971" />
-                  <mssgle:LineSegment
-                    End="123.166666666667,35.6070941336971" />
-                  <mssgle:CubicBezierSegment
-                    Point1="123.166666666667,35.6070941336971"
-                    Point2="127.166666666667,35.6070941336971"
-                    Point3="127.166666666667,39.6070941336971" />
-                  <mssgle:LineSegment
-                    End="127.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\SCD_CLIENTES\Columna derivada 1"
-          TopLeft="195,617.5" />
-        <EdgeLayout
           Id="Package\SCD_CLIENTES.Paths[Salida de Unión de todo 1]"
-          TopLeft="281.5,557.5">
+          TopLeft="281.5,563.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2128,19 +2128,19 @@ WHERE [LastChgDateTime] &gt;= DATEADD(minute, -10, GETDATE())</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SCD_CLIENTES.Paths[Salida de columna derivada1]"
-          TopLeft="283.5,659.5">
+          Id="Package\SCD_CLIENTES.Paths[Salida de origen de OLE DB]"
+          TopLeft="281.5,53.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,40.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

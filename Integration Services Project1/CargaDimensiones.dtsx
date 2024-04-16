@@ -13,8 +13,8 @@
   DTS:MaxErrorCount="5"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="184"
-  DTS:VersionGUID="{239DD81C-CBFA-4B93-B80E-AB064626A29F}">
+  DTS:VersionBuild="185"
+  DTS:VersionGUID="{20DEA68F-8F99-46EB-A6B7-10FAB480E160}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7756,49 +7756,13 @@
           Id="Package\carga_dim_clientes\Flat File Destination"
           TopLeft="528,462" />
         <NodeLayout
-          Size="147,42"
-          Id="Package\carga_dim_clientes\Clientes"
-          TopLeft="229,84" />
-        <NodeLayout
           Size="138,42"
           Id="Package\carga_dim_clientes\DimClientes"
           TopLeft="373,294" />
-        <EdgeLayout
-          Id="Package\carga_dim_clientes.Paths[OLE DB Destination Error Output]"
-          TopLeft="442,336">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="171,126"
-              Start="0,0"
-              End="171,118.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,59"
-                    Point2="0,63"
-                    Point3="4,63" />
-                  <mssgle:LineSegment
-                    End="167,63" />
-                  <mssgle:CubicBezierSegment
-                    Point1="167,63"
-                    Point2="171,63"
-                    Point3="171,67" />
-                  <mssgle:LineSegment
-                    End="171,118.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="12.29109375,68,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\carga_dim_clientes\Clientes"
+          TopLeft="229,84" />
         <NodeLayout
           Size="164,42"
           Id="Package\carga_dim_clientes\Columna derivada"
@@ -7871,11 +7835,47 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\carga_dim_clientes.Paths[OLE DB Destination Error Output]"
+          TopLeft="442,336">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="171,126"
+              Start="0,0"
+              End="171,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59"
+                    Point2="0,63"
+                    Point3="4,63" />
+                  <mssgle:LineSegment
+                    End="167,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="167,63"
+                    Point2="171,63"
+                    Point3="171,67" />
+                  <mssgle:LineSegment
+                    End="171,118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.29109375,68,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_dim_clientes\Clientes">
+    design-time-name="Package\carga_dim_clientes\DimClientes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7888,7 +7888,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\carga_dim_clientes\DimClientes">
+    design-time-name="Package\carga_dim_clientes\Clientes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
