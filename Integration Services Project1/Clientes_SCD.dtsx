@@ -1,0 +1,2276 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/8/2023 12:19:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ESRC2J8"
+  DTS:CreatorName="DESKTOP-ESRC2J8\Facu"
+  DTS:DTSID="{408DCB3F-3348-4987-B5F4-3BE4D2808C9D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{463E6EA7-6DD0-485C-8F71-52A8D65C84E2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ESRC2J8.DMSDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A99CCCCF-3BD0-46D2-963B-BCDD7D366487}"
+      DTS:ObjectName="DESKTOP-ESRC2J8.DMSDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ESRC2J8;Initial Catalog=DMSDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{A99CCCCF-3BD0-46D2-963B-BCDD7D366487}DESKTOP-ESRC2J8.DMSDB;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E5C6D463-FDEC-4F3E-BCE1-639D64BE9E41}"
+      DTS:ObjectName="DESKTOP-ESRC2J8.tpi_bi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ESRC2J8;Initial Catalog=tpi_bi;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{E5C6D463-FDEC-4F3E-BCE1-639D64BE9E41}DESKTOP-ESRC2J8.tpi_bi;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SCD_CLIENTES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{38FE5D4F-13CE-4696-8FF5-743A9B19BC7C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SCD_CLIENTES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\SCD_CLIENTES\Columna derivada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SCD_CLIENTES\Columna derivada.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\SCD_CLIENTES\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de columna derivada].Columns[TO]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de columna derivada].Columns[TO]"
+                      name="TO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_DBDATE)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\SCD_CLIENTES\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD_CLIENTES\Columna derivada 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SCD_CLIENTES\Columna derivada 1.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\SCD_CLIENTES\Columna derivada 1.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de columna derivada].Columns[FROM]"
+                      dataType="dbDate"
+                      description="FROM"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de columna derivada].Columns[FROM]"
+                      name="FROM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_DBDATE)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\SCD_CLIENTES\Columna derivada 1.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD_CLIENTES\Comando de OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Clientes] SET [TO] = ? WHERE [id_Cliente] = ? AND [TO] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD_CLIENTES\Comando de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id_Cliente"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Cliente]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[TO]"
+                      cachedDataType="dbDate"
+                      cachedName="TO"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de columna derivada].Columns[TO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="dbDate"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD_CLIENTES\Conversión de datos"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SCD_CLIENTES\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[id_Cliente]"
+                      cachedDataType="numeric"
+                      cachedName="id_Cliente"
+                      cachedPrecision="38"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Cliente]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[id_Sucursal]"
+                      cachedDataType="numeric"
+                      cachedName="id_Sucursal"
+                      cachedPrecision="38"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Sucursal]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\SCD_CLIENTES\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Cliente]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Cliente]"
+                      name="Copy of id_Cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Cliente]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Sucursal]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Sucursal]"
+                      name="Copy of id_Sucursal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Sucursal]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\SCD_CLIENTES\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD_CLIENTES\DimClientes"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="DimClientes"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Clientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD_CLIENTES\DimClientes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[id_Cliente]"
+                      cachedDataType="numeric"
+                      cachedName="id_Cliente"
+                      cachedPrecision="38"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_Cliente]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Cliente]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[email]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[genero]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="genero"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[genero]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[genero]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[Direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[domicilio]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Direccion]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ciudad"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_Ciudad]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[ciudad]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[pais]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pais"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_Pais]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[pais]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[fecha_Nac]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="fecha_Nac"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[fechaNac]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[fecha_Nac]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Apellido]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[FROM]"
+                      cachedDataType="dbDate"
+                      cachedName="FROM"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[FROM]"
+                      lineageId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de columna derivada].Columns[FROM]" />
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].Columns[id_Sucursal]"
+                      cachedDataType="numeric"
+                      cachedName="id_Sucursal"
+                      cachedPrecision="38"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sucursal]"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Sucursal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_Cliente]"
+                      dataType="i4"
+                      name="id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[genero]"
+                      dataType="wstr"
+                      length="255"
+                      name="genero" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[FROM]"
+                      dataType="dbDate"
+                      name="FROM" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[TO]"
+                      dataType="dbDate"
+                      name="TO" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_cli]"
+                      dataType="i4"
+                      name="id_cli" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[apellido]"
+                      dataType="wstr"
+                      length="255"
+                      name="apellido" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sucursal]"
+                      dataType="i4"
+                      name="id_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[domicilio]"
+                      dataType="wstr"
+                      length="255"
+                      name="domicilio" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre_Pais]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_Pais" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB].ExternalColumns[fechaNac]"
+                      dataType="dbDate"
+                      name="fechaNac" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\DimClientes.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\DimClientes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\DimClientes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\DimClientes.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD_CLIENTES\Dimensión de variación lenta"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensión de variación lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Actualiza una dimensión del almacenamiento de datos de SQL Server Analysis Services. Actualiza los registros de dimensión existentes e inserta los registros de dimensión que faltan. Por ejemplo, se actualiza la tabla DimProduct de la base de datos OLAP AdventureWorksDW con datos procedentes de la tabla Products de la base de datos OLTP AdventureWorks."
+              name="Dimensión de variación lenta"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SELECT utilizada para crear un conjunto de filas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [domicilio], [email], [genero], [id_Cliente], [id_sucursal], [nombre_Ciudad], [nombre_Pais],[FROM],[TO] FROM [dbo].[Clientes]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la cláusula WHERE de la instrucción SELECT que selecciona la fila actual de entre filas con claves empresariales idénticas."
+                  name="CurrentRowWhere">[FROM] IS NOT NULL AND [TO] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las actualizaciones de atributos históricos se dirigen a la salida de transformación para actualizaciones de atributos variables."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando las columnas con atributos fijos contienen cambios."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de columna para el miembro deducido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se detectan las actualizaciones de miembros deducidos."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando se produce un error de búsqueda de un registro existente."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas las filas de la entrada sean nuevas o que la transformación detecte el tipo de cambio."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.tpi_bi]"
+                  description="Define la conexión que se debe usar para búsquedas en la tabla de dimensiones"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+                  name="Entrada de dimensión de variación lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[domicilio]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Direccion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[email]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[email]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[genero]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="genero"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[genero]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[genero]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id_Cliente"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[id_Cliente]"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Cliente]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of id_Sucursal]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id_Sucursal"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[id_sucursal]"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Sucursal]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ciudad"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[nombre_Ciudad]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[ciudad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[pais]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pais"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[nombre_Pais]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[pais]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[domicilio]"
+                      dataType="wstr"
+                      length="255"
+                      name="domicilio" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[genero]"
+                      dataType="wstr"
+                      length="255"
+                      name="genero" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[id_Cliente]"
+                      dataType="i4"
+                      name="id_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[id_sucursal]"
+                      dataType="i4"
+                      name="id_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[nombre_Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[nombre_Pais]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_Pais" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[FROM]"
+                      dataType="dbDate"
+                      name="FROM" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[TO]"
+                      dataType="dbDate"
+                      name="TO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Salida sin cambios]"
+                  description="Filas sin cambios"
+                  exclusionGroup="1"
+                  name="Salida sin cambios"
+                  synchronousInputId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Nueva salida]"
+                  description="Nuevas filas"
+                  exclusionGroup="1"
+                  name="Nueva salida"
+                  synchronousInputId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Salida de atributo fijo]"
+                  description="Filas con cambios en columnas etiquetadas FixedAttribute"
+                  exclusionGroup="1"
+                  name="Salida de atributo fijo"
+                  synchronousInputId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]"
+                  description="Estas filas contienen información nueva para cambios de columnas ChangingAttribute (tipo 1)"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de atributos variables"
+                  synchronousInputId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Salida de inserciones de atributos históricos]"
+                  description="Los cambios de HistoricalAttribute (tipo 2) crean estas nuevas filas"
+                  exclusionGroup="2"
+                  name="Salida de inserciones de atributos históricos"
+                  synchronousInputId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Salida de actualizaciones de miembros deducidos]"
+                  description="Información para actualizar fila de dimensión inicial sin rellenar"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de miembros deducidos"
+                  synchronousInputId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD_CLIENTES\Unión de todo"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unión de todo;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina las filas de varios flujos de datos sin ordenarlos. Por ejemplo, devuelve filas a un flujo de datos después de corregir los errores. Si el orden es importante, se recomienda usar la transformación Mezclar."
+              name="Unión de todo"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1]"
+                  name="Entrada de Unión de todo 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[id_Cliente]"
+                      cachedDataType="numeric"
+                      cachedName="id_Cliente"
+                      cachedPrecision="38"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Cliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Cliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[id_Sucursal]"
+                      cachedDataType="numeric"
+                      cachedName="id_Sucursal"
+                      cachedPrecision="38"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Sucursal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Sucursal]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Direccion"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Direccion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Direccion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ciudad"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[pais]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pais"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[pais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[pais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="email"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[fecha_Nac]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="fecha_Nac"
+                      cachedScale="3"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[fecha_Nac]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[fecha_Nac]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[genero]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="genero"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[genero]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[genero]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[FROM]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="FROM"
+                      cachedScale="3"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[FROM]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[FROM]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[TO]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="TO"
+                      cachedScale="3"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[TO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[TO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Nombre]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Apellido]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Apellido]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[CP]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CP"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[CP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[CP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Copy of id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id_Cliente"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Cliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Cliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Copy of id_Sucursal]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id_Sucursal"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Sucursal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Sucursal]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2]"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[id_Cliente]"
+                      cachedDataType="numeric"
+                      cachedName="id_Cliente"
+                      cachedPrecision="38"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Cliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Cliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[id_Sucursal]"
+                      cachedDataType="numeric"
+                      cachedName="id_Sucursal"
+                      cachedPrecision="38"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Sucursal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Sucursal]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Direccion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Direccion"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Direccion]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Direccion]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ciudad"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[pais]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pais"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[pais]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[pais]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="email"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[fecha_Nac]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="fecha_Nac"
+                      cachedScale="3"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[fecha_Nac]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[fecha_Nac]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[genero]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="genero"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[genero]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[genero]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[FROM]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="FROM"
+                      cachedScale="3"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[FROM]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[FROM]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[TO]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="TO"
+                      cachedScale="3"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[TO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[TO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Nombre]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Apellido"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Apellido]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Apellido]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[CP]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CP"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[CP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[CP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Copy of id_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id_Cliente"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Cliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Cliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Copy of id_Sucursal]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id_Sucursal"
+                      lineageId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of id_Sucursal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Sucursal]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1]"
+                  name="Salida de Unión de todo 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Cliente]"
+                      dataType="numeric"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Cliente]"
+                      name="id_Cliente"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Sucursal]"
+                      dataType="numeric"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[id_Sucursal]"
+                      name="id_Sucursal"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Direccion]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Direccion]"
+                      name="Direccion" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[ciudad]"
+                      name="ciudad" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[pais]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[pais]"
+                      name="pais" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[fecha_Nac]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[fecha_Nac]"
+                      name="fecha_Nac"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[genero]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[genero]"
+                      name="genero" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[FROM]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[FROM]"
+                      name="FROM"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[TO]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[TO]"
+                      name="TO"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Apellido]"
+                      name="Apellido" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[CP]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[CP]"
+                      name="CP" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Cliente]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Cliente]"
+                      name="Copy of id_Cliente" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Sucursal]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Copy of id_Sucursal]"
+                      name="Copy of id_Sucursal" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="VW_CLIENTES_MDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[mdm].[VW_CLIENTES_MDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [id_Cliente]
+      ,[Nombre]
+      ,[Apellido]
+      ,[id_Sucursal]
+      ,[Direccion]
+      ,[CP]
+      ,[ciudad]
+      ,[pais]
+      ,[email]
+      ,[fecha_Nac]
+      ,[genero]
+      ,[FROM]
+      ,[TO]
+ FROM [DMSDB].[mdm].[VW_CLIENTES_MDS]
+WHERE [LastChgDateTime] &gt;= DATEADD(minute, -10, GETDATE())</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ESRC2J8.DMSDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ESRC2J8.DMSDB]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Cliente]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[id_Cliente]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Cliente]"
+                      name="id_Cliente"
+                      precision="38"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Sucursal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[id_Sucursal]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[id_Sucursal]"
+                      name="id_Sucursal"
+                      precision="38"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Direccion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[Direccion]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Direccion]"
+                      name="Direccion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[ciudad]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[ciudad]"
+                      name="ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[pais]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[pais]"
+                      name="pais"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[email]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[fecha_Nac]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_Nac]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[fecha_Nac]"
+                      name="fecha_Nac"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[genero]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[genero]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[genero]"
+                      name="genero"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[FROM]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[FROM]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[FROM]"
+                      name="FROM"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[TO]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[TO]"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[TO]"
+                      name="TO"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[Apellido]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[Apellido]"
+                      name="Apellido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[CP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[CP]"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].Columns[CP]"
+                      name="CP"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[id_Cliente]"
+                      dataType="numeric"
+                      name="id_Cliente"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[id_Sucursal]"
+                      dataType="numeric"
+                      name="id_Sucursal"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[Direccion]"
+                      dataType="wstr"
+                      length="255"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[pais]"
+                      dataType="wstr"
+                      length="255"
+                      name="pais" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha_Nac]"
+                      dataType="dbTimeStamp2"
+                      name="fecha_Nac"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[genero]"
+                      dataType="wstr"
+                      length="255"
+                      name="genero" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[FROM]"
+                      dataType="dbTimeStamp2"
+                      name="FROM"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[TO]"
+                      dataType="dbTimeStamp2"
+                      name="TO"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB].ExternalColumns[CP]"
+                      dataType="wstr"
+                      length="255"
+                      name="CP" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[id_Cliente]"
+                      dataType="numeric"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[id_Cliente]"
+                      name="id_Cliente"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[Apellido]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[Apellido]"
+                      name="Apellido" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[id_Sucursal]"
+                      dataType="numeric"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[id_Sucursal]"
+                      name="id_Sucursal"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[Direccion]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[Direccion]"
+                      name="Direccion" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[CP]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[CP]"
+                      name="CP" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[ciudad]"
+                      name="ciudad" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[pais]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[pais]"
+                      name="pais" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[fecha_Nac]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[fecha_Nac]"
+                      name="fecha_Nac"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[genero]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[genero]"
+                      name="genero" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[FROM]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[FROM]"
+                      name="FROM"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[TO]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[TO]"
+                      name="TO"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Nueva salida]"
+              endId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 1]"
+              name="Nueva salida"
+              startId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Nueva salida]" />
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Salida de columna derivada]"
+              endId="Package\SCD_CLIENTES\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de columna derivada"
+              startId="Package\SCD_CLIENTES\Columna derivada.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Salida de columna derivada1]"
+              endId="Package\SCD_CLIENTES\DimClientes.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de columna derivada"
+              startId="Package\SCD_CLIENTES\Columna derivada 1.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Salida de comando de OLE DB]"
+              endId="Package\SCD_CLIENTES\Unión de todo.Inputs[Entrada de Unión de todo 2]"
+              name="Salida de comando de OLE DB"
+              startId="Package\SCD_CLIENTES\Comando de OLE DB.Outputs[Salida de comando de OLE DB]" />
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Salida de conversión de datos]"
+              endId="Package\SCD_CLIENTES\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+              name="Salida de conversión de datos"
+              startId="Package\SCD_CLIENTES\Conversión de datos.Outputs[Salida de conversión de datos]" />
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Salida de inserciones de atributos históricos]"
+              endId="Package\SCD_CLIENTES\Columna derivada.Inputs[Entrada de columna derivada]"
+              name="Salida de inserciones de atributos históricos"
+              startId="Package\SCD_CLIENTES\Dimensión de variación lenta.Outputs[Salida de inserciones de atributos históricos]" />
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Salida de origen de OLE DB]"
+              endId="Package\SCD_CLIENTES\Conversión de datos.Inputs[Entrada de conversión de datos]"
+              name="Salida de origen de OLE DB"
+              startId="Package\SCD_CLIENTES\VW_CLIENTES_MDS.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\SCD_CLIENTES.Paths[Salida de Unión de todo 1]"
+              endId="Package\SCD_CLIENTES\Columna derivada 1.Inputs[Entrada de columna derivada]"
+              name="Salida de Unión de todo 1"
+              startId="Package\SCD_CLIENTES\Unión de todo.Outputs[Salida de Unión de todo 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\SCD_CLIENTES"
+          TopLeft="174,73" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SCD_CLIENTES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="Package\SCD_CLIENTES\DimClientes"
+          TopLeft="218.5,713.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\SCD_CLIENTES\Columna derivada"
+          TopLeft="56.5000000000001,317.5" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\SCD_CLIENTES\Columna derivada 1"
+          TopLeft="195,623.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\SCD_CLIENTES\VW_CLIENTES_MDS"
+          TopLeft="194,11.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\SCD_CLIENTES\Dimensión de variación lenta"
+          TopLeft="174,215.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\SCD_CLIENTES\Comando de OLE DB"
+          TopLeft="43.0000000000001,419.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\SCD_CLIENTES\Conversión de datos"
+          TopLeft="194,113.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\SCD_CLIENTES\Unión de todo"
+          TopLeft="209,521.5" />
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de inserciones de atributos históricos]"
+          TopLeft="247,257.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-108.5,60"
+              Start="0,0"
+              End="-108.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2659279778393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2659279778393"
+                    Point2="0,24.2659279778393"
+                    Point3="-4,24.2659279778393" />
+                  <mssgle:LineSegment
+                    End="-104.5,24.2659279778393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-104.5,24.2659279778393"
+                    Point2="-108.5,24.2659279778393"
+                    Point3="-108.5,28.2659279778393" />
+                  <mssgle:LineSegment
+                    End="-108.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-151.2382421875,29.2659279778393,193.976484375,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de conversión de datos]"
+          TopLeft="281.5,155.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de comando de OLE DB]"
+          TopLeft="131.5,461.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.166666666667,60"
+              Start="0,0"
+              End="127.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6070941336971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.6070941336971"
+                    Point2="0,35.6070941336971"
+                    Point3="4,35.6070941336971" />
+                  <mssgle:LineSegment
+                    End="123.166666666667,35.6070941336971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.166666666667,35.6070941336971"
+                    Point2="127.166666666667,35.6070941336971"
+                    Point3="127.166666666667,39.6070941336971" />
+                  <mssgle:LineSegment
+                    End="127.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de columna derivada1]"
+          TopLeft="283.5,665.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de columna derivada]"
+          TopLeft="135,359.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Nueva salida]"
+          TopLeft="316,257.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.6666666666667,264"
+              Start="0,0"
+              End="-11.6666666666667,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.420598839944" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,127.420598839944"
+                    Point2="0,131.420598839944"
+                    Point3="-4,131.420598839944" />
+                  <mssgle:LineSegment
+                    End="-7.66666666666669,131.420598839944" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.66666666666669,131.420598839944"
+                    Point2="-11.6666666666667,131.420598839944"
+                    Point3="-11.6666666666667,135.420598839944" />
+                  <mssgle:LineSegment
+                    End="-11.6666666666667,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.1216927083333,136.420598839944,56.57671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de Unión de todo 1]"
+          TopLeft="281.5,563.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD_CLIENTES.Paths[Salida de origen de OLE DB]"
+          TopLeft="281.5,53.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SCD_CLIENTES\DimClientes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SCD_CLIENTES\VW_CLIENTES_MDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SCD_CLIENTES\Dimensión de variación lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{E5C6D463-FDEC-4F3E-BCE1-639D64BE9E41}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Clientes]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[Apellido]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;apellido&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[Direccion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;domicilio&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[email]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;email&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[fecha_Nac]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;fechaNac&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[genero]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;genero&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of id_Cliente]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;id_Cliente&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of id_Sucursal]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;id_sucursal&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[Nombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;nombre&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[ciudad]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;nombre_Ciudad&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;VW_CLIENTES_MDS.Salidas[Salida de origen de OLE DB].Columnas[pais]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;nombre_Pais&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Columna derivada&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando de OLE DB&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Unión de todo&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Columna derivada 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;FROM&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;TO&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
